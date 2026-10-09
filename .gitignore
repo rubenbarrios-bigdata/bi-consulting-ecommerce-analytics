@@ -1,0 +1,17 @@
+# OS generated files
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Temporary and office lock files
+~$*.xlsx
+*.tmp
+*.bak
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# IDE configs
+.vscode/
+.idea/

@@ -1,0 +1,394 @@
+=== PAGE 1 ===
+BI Consulting
+PLAN DE ESTUDIOS 2026
+
+
+=== PAGE 2 ===
+MODALIDAD VIRTUAL
+1 Clase virtual sincrónica semanal de 2 hs (obligatoria).
+1 Clase de consulta de 1 h (opcional).
+ACREDITACIÓN
+70% de asistencia a clases virtuales semanales.
+Aprobación de cuestionarios parciales de contenidos.
+Entrega y aprobación de Proyecto Final Integrador.
+DURACIÓN
+Cuatrimestral (20 semanas)
+CERTIFICACIÓN
+70% de asistencia a clases virtuales semanales.
+Aprobación de cuestionarios parciales de contenidos.
+Entrega y aprobación de Proyecto Final Integrador.
+Microcredencial oﬁcial del Ministerio de Educación de la
+Ciudad de Buenos Aires.
+»BI Consulting
+
+=== PAGE 3 ===
+El análisis de datos se ha convertido en una competencia esencial en el entorno  empresarial 
+actual, donde la información se genera a gran velocidad y su correcta  interpretación resulta clave 
+para la toma de decisiones. Comprender, ordenar y analizar datos permite a las organizaciones 
+optimizar procesos, reducir costos, anticipar tendencias y diseñar estrategias más precisas 
+y efectivas.
+En este contexto, un curso introductorio de BI Consulting adquiere un rol central como puerta de 
+entrada al mundo del análisis y la ciencia de datos. A través de prácticas guiadas y el uso de 
+herramientas como Google Sheets y Looker Studio, los estudiantes desarrollan habilidades 
+técnicas fundamentales para transformar datos en información accionable, identiﬁcar patrones 
+relevantes y construir reportes y visualizaciones que mejoren la comprensión del negocio.
+La incorporación gradual de herramientas de inteligencia artiﬁcial también fortalece el proceso 
+analítico. La IA permite automatizar tareas de limpieza, detección de patrones y generación de 
+insights, optimizando tiempos y aumentando la precisión del análisis. Su integración pedagógica 
+prepara a los estudiantes para utilizar estas tecnologías con criterio técnico y ético, entendiendo 
+tanto sus beneﬁcios como sus limitaciones dentro de entornos reales.
+En síntesis, el estudio de Business Intelligence no solo potencia el crecimiento profesional de los 
+estudiantes, sino que también responde a las demandas actuales del mercado, donde la capacidad 
+de trabajar con datos y apoyarse en tecnologías emergentes es un factor decisivo para la 
+innovación y la competitividad organizacional.
+Fundamentación
+Objetivo general
+Capacitar a los estudiantes en el uso de herramientas y metodologías de Business Intelligence (BI) 
+para recolectar, limpiar, procesar, analizar e interpretar datos provenientes de distintas fuentes, con 
+el ﬁn de transformarlos en información valiosa para la toma de decisiones en contextos organizacionales.
+El curso busca que los participantes adquieran no solo habilidades técnicas en Google Sheets y 
+Looker Studio, sino también competencias de análisis crítico, comunicación efectiva y storytelling 
+con datos, pilares fundamentales en el rol de un consultor de BI. De este modo, los estudiantes 
+estarán preparados para identiﬁcar patrones, diseñar dashboards, presentar hallazgos a diferentes 
+audiencias y recomendar acciones basadas en evidencia, integrando aspectos éticos en el manejo 
+de la información y fomentando la innovación en procesos empresariales.
+»BI Consulting
+
+=== PAGE 4 ===
+Contenidos mínimos
+Quienes tomen el curso de datos adquirirán una variedad de conocimientos y habilidades 
+esenciales para ser competentes en este campo. A continuación, se detallan los temas 
+importantes que serán cubiertos:
+Fundamentos de Estadística Descriptiva
+Análisis Exploratorio de Datos
+Visualización de Datos
+Modelado de Datos
+Resolución de Problemas
+Creación de Dashboards en Looker Studio
+Conocimientos previos requeridos:
+»BI Consulting
+Los estudiantes deben tener experiencia: 
+ •  Operando computadoras. 
+ •  En el uso de internet: navegadores, búsquedas, herramientas, 
+     servicios online y procesos de registración.
+
+=== PAGE 5 ===
+Comprender conceptos estadísticos básicos.
+Conocer formatos de datos.
+Desarrollar habilidades en la recolección, limpieza y preparación de datos.
+Emplear herramientas para la manipulación de datos y creación de 
+visualizaciones.
+Identiﬁcar patrones, tendencias y anomalías en los datos.
+Crear dashboards interactivos y reportes visuales.
+Presentar hallazgos de manera clara y efectiva a diferentes audiencias.
+Trabajar en equipos multidisciplinarios.
+Aplicar un enfoque analítico para resolver problemas complejos basados 
+en datos.
+Fomentar el pensamiento crítico para evaluar la calidad y relevancia de los 
+datos.
+Mantener una disposición para el aprendizaje continuo y actualización en 
+tendencias de BI.
+Objetivos especíﬁcos
+»BI Consulting
+
+
+=== PAGE 6 ===
+Recursos necesarios
+Cuentas de Google y gmail conﬁguradas con nombre y apellidos reales.
+Recolectar, limpiar y preparar datos de diversas fuentes, realizar análisis 
+exploratorios para identiﬁcar tendencias, y aplicar técnicas estadísticas 
+básicas. Además, podrán crear visualizaciones efectivas que comuniquen 
+sus hallazgos y presentar conclusiones a diferentes audiencias, aplicando un 
+enfoque analítico para resolver problemas basados en datos.
+La metodología del curso se orientará hacia la práctica mediante ejercicios, 
+proyectos y estudios de caso, asegurando la adquisición de habilidades 
+técnicas y comunicativas.
+Resultados de aprendizaje
+Al ﬁnalizar el curso, los estudiantes serán capaces de:
+»BI Consulting
+
+
+=== PAGE 7 ===
+Temario
+ Introducción 
+a BI
+CLASE 01
+Ética de 
+Datos
+CLASE 02
+Obtención 
+de Datos
+CLASE 03
+Calidad y 
+Seguridad de 
+los Datos
+CLASE 04
+Preparación y 
+Procesamiento 
+de Datos
+CLASE 05
+Preparación y 
+Procesamiento 
+de Datos
+CLASE 06
+Estadística 
+Descriptiva 
+Básica
+CLASE 07
+Informes y 
+Reportes I
+CLASE 08
+ Informes y 
+Reportes II
+CLASE 09
+Dashboards I
+CLASE 10
+Dashboards II
+CLASE 11
+Principios de 
+Visualización 
+Efectiva
+CLASE 12
+Storytelling 
+con Datos
+CLASE 13
+Herramientas 
+Avanzadas
+CLASE 14
+Cómo crear un 
+proyecto BI I
+CLASE 15
+Cómo crear un 
+proyecto BI II
+CLASE 16
+»BI Consulting
+
+=== PAGE 8 ===
+Temario
+CLASE N°1  | INTRODUCCIÓN A BI
+• Deﬁniciones y conceptos básicos de BI
+• Objetivo principal de BI
+• Tecnologías y herramientas de BI
+• Importancia de BI en la Era Digital
+• Actividad: Entornos de trabajo – Introducción a Google Sheets.
+• Ejercicios
+• Cuestionario Onboarding
+CLASE N°2  | ÉTICA DE DATOS
+• Principios de la ética en el manejo de datos
+• Regulaciones sobre protección de datos (GDPR, CCPA)
+• Casos de estudio sobre ética de datos
+• Actividad: 
+◦ Caso de estudio. Contexto, faltas a la ética, consecuencias 
+y lecciones aprendidas.
+◦ Importar datos en Google Sheet. Funciones básicas. 
+• Ejercicios
+• Cuestionario en campus virtual
+CLASE N°3  | OBTENCIÓN DE DATOS
+• Fuentes de datos: internas y externas.
+• Métodos de recopilación de datos. 
+• Google Forms.
+• Datos sintéticos.
+• Actividad: 
+◦ Identiﬁcar fuentes de datos públicas relacionadas con un 
+tema como la salud, el medio ambiente o la economía. 
+Importarlas a Google Sheets. 
+◦ Crear un formulario con Google Forms. Rellenarlo con 
+datos sintéticos.
+• Ejercicios
+»BI Consulting
+
+=== PAGE 9 ===
+• Deﬁnición de calidad de datos
+• Técnicas para asegurar la calidad de los datos. Concepto de 
+normalización de tablas.
+• Prácticas de seguridad de datos y acceso controlado: Repaso de 
+SELECT SQL: QUERY
+• Actividad: 
+◦ Importar un conjunto de datos en Google Sheets. 
+◦ Crear un checklist  con criterios de calidad de datos. Aplicar 
+ese checklist al conjunto de datos y registrar los hallazgos. 
+◦ Presentar un breve informe de calidad. 
+◦ Agregar validación de datos a una de las columnas.
+◦ Crear una vista controlada de la tabla. 
+• Ejercicios
+• Cuestionario en campus virtual
+• Ruta de avance
+CLASE N°4  | CALIDAD Y SEGURIDAD DE LOS DATOS
+• Introducción a la preparación de datos
+• Limpieza de datos en Google Sheets
+• Uso de funciones básicas para transformar datos
+• Actividad: Con un conjunto de datos desordenados proporcionado 
+utilizar funciones de Google Sheets para limpiarlos y   
+uniformizarlos. Documentar el proceso.
+• Ejercicios
+CLASE N°5  | PREPARACIÓN Y PROCESAMIENTO DE DATOS
+Temario
+»BI Consulting
+
+=== PAGE 10 ===
+• Uso de Google Sheets para combinar y agrupar datos
+• Casos prácticos de limpieza de datos
+• Transformación de datos para análisis
+• Fórmulas condicionales
+• Actividad: 
+◦ Importar dos hojas de datos en Google Sheets (una con 
+ventas y otra con información de clientes). 
+◦ Usar BUSCAR o INDICE y COINCIDIR para combinar las 
+hojas y crear un nuevo conjunto de datos que incluya   
+información de ambos.
+• Ejercicios
+• Cuestionario en campus virtual
+CLASE N°6  | PREPARACIÓN Y PROCESAMIENTO DE DATOS
+CLASE N°7  | ESTADÍSTICA DESCRIPTIVA BÁSICA
+• Conceptos básicos: media, mediana, moda, desviación están-
+dar. Correlaciones.
+• Análisis exploratorio de datos con Google Sheets
+• Visualización de estadísticas básicas: barras, pies y líneas.
+• Actividad: 
+◦ Tomar un conjunto de datos numéricos que reﬂeje un  
+registro de ventas mensuales en Google Sheets. 
+◦ Calcular la media, mediana, moda y desviación estándar 
+utilizando las funciones correspondientes. 
+◦ Presentar los hallazgos y visualizar los resultados en un 
+gráﬁco sencillo.
+• Ejercicios
+Temario
+»BI Consulting
+
+=== PAGE 11 ===
+CLASE N°8  | INFORMES Y REPORTES I
+• Creación de informes efectivos en Google Sheets.     
+Formato condicional.
+• Introducción a Looker Studio
+• Diseño y estructura de informes
+• Actividad: 
+◦ Crear un informe en Google Sheets utilizando un conjunto 
+de datos proporcionado. 
+◦ Incluir gráﬁcos relevantes, tablas y un resumen de las  
+conclusiones clave, utilizando los principios aprendidos 
+ en la clase anterior.
+• Ejercicios
+• Cuestionario en campus virtual
+• Pre Entrega del Proyecto
+CLASE N°9  | INFORMES Y REPORTES II
+• Integración de Google Sheets con Looker Studio.
+• Automatización de informes con Looker Studio.
+• Actividad: Tomar el informe creado en Google Sheets y cargarlo 
+en Looker Studio. Mejorar su presentación con gráﬁcos y tablas 
+interactivas. Ensayar una exposición frente a la clase.
+• Ejercicios
+Temario
+»BI Consulting
+
+=== PAGE 12 ===
+CLASE N°10  | DASHBOARDS I
+Temario
+»BI Consulting
+Concepto y utilidad de los dashboards
+Diseño de un dashboard en Looker Studio
+Elementos clave de un dashboard efectivo
+Actividad:  
+  Utilizar un conjunto de datos en Google Sheets para 
+crear un dashboard simple en Looker Studio que muestre 
+métricas clave. Incluir al menos un gráﬁco de barras, uno de 
+líneas y una tabla. 
+  Describir el propósito de cada visualización utilizada.
+Ejercicios
+Cuestionario en campus virtual
+CLASE N°11  | DASHBOARDS II
+Métricas de marketing digital
+Indicadores clave de rendimiento (KPIs)
+Fuentes de datos combinados: Repaso SQL JOINS
+Actividad:  
+  Añadir ﬁltros e interactividad al dashboard en Looker 
+Studio. Aplicar diferentes conﬁguraciones y documentar 
+cómo cada cambio afecta la presentación de los datos. 
+Presentar el dashboard con interactividad a la clase.
+Ejercicios
+
+=== PAGE 13 ===
+CLASE N°13  | STORYTELLING CON DATOS
+CLASE N°12  | 
+• Fundamentos de visualización de datos. Ejemplos que hicieron historia. 
+• Tipos de gráﬁcos y cuál usar.
+• Errores comunes en visualización. El concepto de carga cognitiva.
+• Actividad: 
+◦ Tomar tres gráﬁcos de diversos orígenes y evaluar si 
+ cumplen con los principios de visualización efectiva 
+ discutidos en clase. 
+◦ Hacer anotaciones sobre qué se podría mejorar en cada 
+visualización, y luego crear una versión mejorada de una de ellas.
+• Ejercicios
+• Cuestionario en campus virtual
+• Ruta de avance
+Temario
+»BI Consulting
+PRINCIPIOS DE 
+VISUALIZACIÓN EFECTIVA
+• Importancia del storytelling en BI
+• Cómo estructurar una narrativa de datos
+• Casos de estudio efectivos de storytelling / Actividad experiencial.
+• Actividad: 
+◦ Seleccionar un conjunto de datos y crear una narrativa 
+utilizando Google Slides. Integrar gráﬁcos creados en 
+Google Sheets y articular la historia que los datos cuentan. 
+Presentar la historia.
+• Ejercicios
+
+=== PAGE 14 ===
+• Introducción al proyecto.
+• Deﬁnición del problema de BI a resolver.
+• Recopilación de datos y preparación inicial.
+• Actividad: 
+◦ Deﬁnición del problema. Utilizar Google Sheets para crear 
+un plan de acción que incluya la investigación de datos, el 
+análisis esperado y un cronograma de trabajo.
+• Ejercicios.
+• Proyecto ﬁnal.
+CLASE N°14  | HERRAMIENTAS AVANZADAS 
+• Funciones avanzadas y fórmulas en Sheets
+• Colaboración y compartición de datos en Sheets
+• Actividad:  Utilizar condicionales y fórmulas compuestas.
+• Ejercicios
+• Cuestionario en campus virtual
+Temario
+»BI Consulting
+CÓMO CREAR UN 
+PROYECTO BI ICLASE N°15  | 
+• Desarrollo del análisis y visualización
+• Presentación del proyecto.
+• Reﬂexiones y mejores prácticas en BI consulting.
+• Actividad: 
+◦ Completar el proyecto en Google Sheets y Looker Studio. 
+ Presentar el análisis, resultados y visualizaciones, enfatizando 
+cómo el proyecto ayuda a resolver el problema identiﬁcado y 
+qué decisiones se pueden derivar de su análisis. Cómo recibir  
+retroalimentación  y realizar ajustes según sea necesario.
+• Ejercicios.
+• Entrega del Proyecto Final
+CÓMO CREAR UN 
+PROYECTO BI IICLASE N°16  | 
+
+=== PAGE 15 ===
+Bibliografía de Referencia
+Requisitos para la acreditación
+70% de asistencia.
+Entrega de todos los desafíos obligatorios presentes a lo largo de la carrera.
+Aprobación del proyecto ﬁnal integrador.
+Documentación:
+• Documentación Oﬁcial de Google Sheets
+• Guía de Looker Studio
+• Recursos en línea sobre visualización de datos y análisis descriptivo
+Lecturas complementarias:  ZMOT (Marketing basado en datos)
+El proyecto ﬁnal integrador abordará una problemática real y planteará una 
+pregunta de investigación que permitirá a los estudiantes aplicar las técnicas de 
+BI aprendidas. Incluirá la recolección y limpieza de datos utilizando Google 
+Sheets, y la visualización de resultados en Looker Studio. El proyecto culminará 
+en un informe que resuma los hallazgos, metodologías utilizadas y conclusiones, 
+integrando técnicas de comunicación efectiva.
+Proyecto Final Integrador
+»BI Consulting
+
+=== PAGE 16 ===
+
+
