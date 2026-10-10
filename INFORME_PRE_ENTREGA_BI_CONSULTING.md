@@ -11,10 +11,10 @@
 **Instancia de Evaluación:** Pre-Entrega de Proyecto (Clases 1 a 8)  
 **Fecha:** Octubre 2024 / Ciclo 2026  
 **Archivos del Entregable:**
-* Carpeta en Google Drive: `[Apellido y Nombre del Alumno] - Comisión [xxx] - TPI BI Consulting`
+* Carpeta en Google Drive: [Ruben Barrios - TPI BI Consulting (Google Sheets)](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt)
 * Archivo de Google Sheets: `TPI_BI_Consulting_Ventas_Ecommerce.xlsx`
 * Archivo de Google Docs: `INFORME_PRE_ENTREGA_BI_CONSULTING`
-* Sets de Datos Originales: `ventas (1).csv`, `clientes.csv`, `productos.csv`, `categorias.csv`, `metodos_pago.csv`
+* Sets de Datos Originales: `ventas.csv`, `clientes.csv`, `productos.csv`, `categorias.csv`, `metodos_pago.csv`
 
 ---
 
@@ -93,7 +93,7 @@ Para contrastar el desempeño de este e-commerce con patrones de mercado del com
 ## 4. STATUS DE CALIDAD DE LOS DATOS (DATA QUALITY CHECKLIST)
 
 ### 4.1. Marco de Evaluación Aplicado (Clase 4)
-En cumplimiento de la actividad práctica de la Clase 4, se auditó el conjunto completo de datos compuesto por: `ventas (1).csv`, `clientes.csv`, `productos.csv`, `categorias.csv` y `metodos_pago.csv`.
+En cumplimiento de la actividad práctica de la Clase 4, se auditó el conjunto completo de datos compuesto por: `ventas.csv`, `clientes.csv`, `productos.csv`, `categorias.csv` y `metodos_pago.csv`.
 
 Se evaluaron los criterios de calidad: **Unicidad, Completitud, Consistencia, Integridad Referencial, Validez y Exactitud**.
 
@@ -101,14 +101,14 @@ Se evaluaron los criterios de calidad: **Unicidad, Completitud, Consistencia, In
 
 | Criterio de Calidad | Archivo / Entidad | Variable(s) Evaluada(s) | Hallazgo Diagnóstico | Nivel de Riesgo | Acción Correctiva Implementada | Estado |
 | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
-| **Unicidad** | `ventas (1).csv` | `ID_Venta` (Clave Primaria) | Se identificaron **29 registros duplicados exactos** (3.029 filas totales frente a 3.000 identificadores únicos de venta). | **ALTO** | Eliminación de duplicados mediante filtrado de primera aparición en la hoja consolidada de Google Sheets. | **CORREGIDO** |
+| **Unicidad** | `ventas.csv` | `ID_Venta` (Clave Primaria) | Se identificaron **29 registros duplicados exactos** (3.029 filas totales frente a 3.000 identificadores únicos de venta). | **ALTO** | Eliminación de duplicados mediante filtrado de primera aparición en la hoja consolidada de Google Sheets. | **CORREGIDO** |
 | **Completitud** | Todas las tablas | Todas las columnas | **0 valores nulos o celdas vacías** en los campos operativos clave (IDs, montos, cantidades, estados). | **BAJO** | El dataset cuenta con integridad estructural completa; no se requirió imputación artificial de datos. | **APROBADO** |
 | **Consistencia de Tipos** | `productos.csv` | `Precio_Unitario` | Los valores monetarios figuraban formateados como texto con coma decimal (ej. `"12,24"`). | **ALTO** | Transformación mediante fórmula `=VALOR(SUSTITUIR(..., ",", "."))` para permitir cálculos matemáticos en Sheets. | **CORREGIDO** |
 | **Consistencia Léxica** | `clientes.csv` | Encabezados y Nombres | Encabezado con error tipográfico (`Fecha_Resgistro`) y presencia de caracteres mixtos / espacios accidentales. | **MEDIO** | Normalización del encabezado y estandarización con `=NOMPROPIO(ESPACIOS(...))` y `=MINUSC(...)`. | **CORREGIDO** |
 | **Integridad Relacional** | `ventas` vs. `clientes` | `ID_Cliente` | **100% de coincidencia:** Los 326 clientes vinculados en transacciones existen en la tabla maestra de clientes. | **NULO** | Validación satisfactoria. Unión relacional sin pérdidas mediante `=BUSCARV()`. | **APROBADO** |
 | **Integridad Relacional** | `ventas` vs. `productos` | `ID_Producto` | **100% de coincidencia:** Los 38 productos vendidos coinciden exactamente con el catálogo maestro. | **NULO** | Validación satisfactoria. Enriquecimiento de categoría y precio sin discrepancias. | **APROBADO** |
-| **Validez** | `ventas (1).csv` | `Estado` | Los estados de transacción se distribuyen de forma coherente: 2.523 Completas (84.1%), 467 Pendientes (15.6%) y 10 Canceladas (0.3%). | **BAJO** | Configuración de regla de **Validación de Datos** (lista desplegable) para blindar futuras entradas de datos. | **APROBADO** |
-| **Exactitud** | `ventas (1).csv` | `Cantidad`, `Fecha` | Cantidades acotadas de 1 a 6 unidades por ítem. Fechas válidas distribuidas a lo largo del año 2024. | **BAJO** | Coherencia lógica de las magnitudes del negocio minorista. | **APROBADO** |
+| **Validez** | `ventas.csv` | `Estado` | Los estados de transacción se distribuyen de forma coherente: 2.523 Completas (84.1%), 467 Pendientes (15.6%) y 10 Canceladas (0.3%). | **BAJO** | Configuración de regla de **Validación de Datos** (lista desplegable) para blindar futuras entradas de datos. | **APROBADO** |
+| **Exactitud** | `ventas.csv` | `Cantidad`, `Fecha` | Cantidades acotadas de 1 a 6 unidades por ítem. Fechas válidas distribuidas a lo largo del año 2024. | **BAJO** | Coherencia lógica de las magnitudes del negocio minorista. | **APROBADO** |
 
 **Índice Global de Calidad de Datos (DQI):** **98.5%** tras la ejecución de las correcciones de unicidad y normalización de tipos.
 

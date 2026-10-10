@@ -1,296 +1,749 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Informe de Consultoría BI</title>
-<style>
-    body { font-family: Calibri, Arial, sans-serif; line-height: 1.5; color: #1e293b; max-width: 900px; margin: 30px auto; padding: 0 20px; }
-    h1 { color: #0f172a; font-size: 22pt; border-bottom: 3px solid #1e3a8a; padding-bottom: 6px; }
-    h2 { color: #1e3a8a; font-size: 15pt; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 4px; margin-top: 24px; }
-    h3 { color: #0f766e; font-size: 12pt; margin-top: 18px; }
-    h4 { color: #334155; font-size: 10.5pt; margin-top: 14px; }
-    p, li { font-size: 10pt; color: #334155; text-align: justify; }
-    table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 9.5pt; border: 1px solid #cbd5e1; }
-    th { background-color: #1e3a8a; color: white; padding: 8px 10px; border: 1px solid #cbd5e1; text-align: left; }
-    td { padding: 7px 10px; border: 1px solid #cbd5e1; }
-    tr:nth-child(even) { background-color: #f8fafc; }
-    code { background: #f1f5f9; padding: 2px 4px; border-radius: 3px; font-family: Consolas, monospace; }
-</style>
-</head><body><h1>PROYECTO INTEGRADOR: CONSULTORÍA DE BUSINESS INTELLIGENCE (ETAPA 1 Y 2)</h1>
-<h2>ANÁLISIS DE VENTAS EN UNA EMPRESA DE E-COMMERCE</h2>
-<br/>
-<hr/>
-<br/>
-<p><b>Entidad de Formación:</b> Programa BI Consulting – Talento Tech | Ministerio de Educación</p>
-<p><b>Consultora:</b> Datawise Consulting</p>
-<p><b>Rol:</b> Analista de Business Intelligence</p>
-<p><b>Alumno:</b> [Apellido y Nombre del Alumno]</p>
-<p><b>Comisión:</b> Comisión [xxx]</p>
-<p><b>Instancia de Evaluación:</b> Pre-Entrega de Proyecto (Clases 1 a 8)</p>
-<p><b>Fecha:</b> Octubre 2024 / Ciclo 2026</p>
-<p><b>Archivos del Entregable:</b></p>
-<li>Carpeta en Google Drive: <code>[Apellido y Nombre del Alumno] - Comisión [xxx] - TPI BI Consulting</code></li>
-<li>Archivo de Google Sheets: <code>TPI_BI_Consulting_Ventas_Ecommerce.xlsx</code></li>
-<li>Archivo de Google Docs: <code>INFORME_PRE_ENTREGA_BI_CONSULTING</code></li>
-<li>Sets de Datos Originales: <code>ventas (1).csv</code>, <code>clientes.csv</code>, <code>productos.csv</code>, <code>categorias.csv</code>, <code>metodos_pago.csv</code></li>
-<br/>
-<hr/>
-<br/>
-<h2>1. CAPTACIÓN DEL CLIENTE: LA IMPORTANCIA DE BUSINESS INTELLIGENCE EN E-COMMERCE</h2>
-<br/>
-<h3>1.1. Contexto y Diagnóstico del Negocio</h3>
-<p>En el entorno competitivo del comercio electrónico actual, las empresas minoristas se enfrentan a un volumen masivo y continuo de microtransacciones generadas a través de múltiples puntos de contacto digitales. Sin embargo, acumular datos no es equivalente a generar valor. En muchas organizaciones, estos datos permanecen dispersos en hojas de cálculo desarticuladas, pasarelas de pago y registros de stock, creando <b>silos de información</b> que imposibilitan una comprensión integral del rendimiento del negocio.</p>
-<br/>
-<p>Sin una práctica formal de Business Intelligence (BI), la toma de decisiones se apoya en la intuición o en reportes retroactivos estáticos que toman días en consolidarse. Esto conlleva ineficiencias críticas: sobrecostos por rotura o exceso de stock, incapacidad para identificar a los clientes más valiosos, desconocimiento de la fricción en las pasarelas de cobro y falta de visibilidad sobre los márgenes reales por categoría de producto.</p>
-<br/>
-<h3>1.2. Propuesta de Valor y Beneficios Directos de BI</h3>
-<p>La implementación de metodologías y herramientas de Business Intelligence transforma estos datos transaccionales en <b>activos estratégicos para la toma de decisiones basada en evidencia</b>:</p>
-<br/>
-<p><b>1. </b> <b>Visibilidad Centralizada en Tiempo Real:</b> Centraliza en una única fuente de la verdad (<i>Single Source of Truth</i>) el comportamiento de ventas, inventario y clientes, reduciendo los tiempos de elaboración de informes de semanas a minutos.</p>
-<p><b>2. </b> <b>Optimización de Inventario y Rotación por Categoría:</b> Permite cruzar el volumen de ventas con el stock disponible, identificando qué líneas de alta demanda (como <i>Carnicería</i> o <i>Lácteos</i>) requieren reposición ágil frente a líneas de rotación más baja (<i>Conservas</i>).</p>
-<p><b>3. </b> <b>Comprensión del Comportamiento del Consumidor:</b> Segmentación por ticket promedio, frecuencia de compra y ubicación geográfica, habilitando el diseño de campañas comerciales dirigidas y promociones personalizadas.</p>
-<p><b>4. </b> <b>Eficiencia en Medios de Pago y Cobranza:</b> Diagnóstico de la adopción de billeteras digitales (Mercado Pago), transferencias bancarias y tarjetas, permitiendo monitorear pedidos pendientes y mitigar cancelaciones.</p>
-<p><b>5. </b> <b>Mitigación de Riesgos y Control Operativo:</b> Seguimiento en tiempo real de transacciones canceladas y pendientes antes de que afecten la satisfacción del cliente o la liquidez del negocio.</p>
-<br/>
-<h3>1.3. Ecosistema de Herramientas y Metodología Aplicada</h3>
-<p>Para este proyecto de consultoría, se implementa una solución ágil y accesible alineada al ecosistema de Google:</p>
-<br/>
-<li><b>Google Sheets (Capa de Recolección, Limpieza, Modelado y Análisis):</b></li>
-<p>  * Auditoría y control de calidad inicial mediante checklists estructurados.</p>
-<p>  * Saneamiento y uniformización de textos con funciones nativas (<code>ESPACIOS</code>, <code>NOMPROPIO</code>, <code>MINUSC</code>).</p>
-<p>  * Normalización de formatos numéricos y tipos de datos (<code>VALOR</code>, <code>SUSTITUIR</code>).</p>
-<p>  * Integración relacional de conjuntos de datos con funciones de búsqueda (<code>BUSCARV</code>, <code>INDICE</code> y <code>COINCIDIR</code>).</p>
-<p>  * Análisis exploratorio y cálculo de métricas estadísticas descriptivas (<code>PROMEDIO</code>, <code>MEDIANA</code>, <code>MODA.UNO</code>, <code>DESVEST.M</code>).</p>
-<p>  * Vistas controladas y agregaciones con <code>QUERY</code>, <code>SUMAR.SI</code> y <code>CONTAR.SI</code>.</p>
-<li><b>Looker Studio (Capa de Reportería Interactiva y Presentación Gerencial):</b></li>
-<p>  * Conexión directa a las hojas normalizadas de Google Sheets para diseñar tableros dinámicos, facilitando el autoservicio de información a la dirección de la empresa sin barreras técnicas.</p>
-<br/>
-<hr/>
-<br/>
-<h2>2. INVESTIGACIÓN: CONTEXTO ÉTICO Y LEGAL EN EL MANEJO DE DATOS EN E-COMMERCE</h2>
-<br/>
-<h3>2.1. Selección del Caso de Estudio: Sanción Récord del GDPR a Amazon (€746 Millones, 2021)</h3>
-<p>El comercio electrónico procesa continuamente datos personales sensibles (nombres, domicilios de entrega, números telefónicos, correos electrónicos, historiales de navegación y hábitos de gasto). El límite entre la personalización de la experiencia de compra y la invasión a la privacidad del consumidor es crítico.</p>
-<br/>
-<p>En julio de 2021, la Comisión Nacional de Protección de Datos de Luxemburgo (CNPD), autoridad líder en la Unión Europea bajo el Reglamento General de Protección de Datos (<b>GDPR</b>), impuso una sanción histórica de <b>746 millones de euros a Amazon Europe Core S.à r.l.</b></p>
-<br/>
-<h3>2.2. Contexto de la Infracción y Faltas a la Ética</h3>
-<p>El caso se originó a partir de una investigación impulsada por la ONG de derechos digitales <i>La Quadrature du Net</i>, representando a más de 10.000 ciudadanos. Los hallazgos revelaron:</p>
-<br/>
-<p><b>1. </b> <b>Perfilado Publicitario Invasivo sin Consentimiento Válido:</b> Amazon rastreaba los patrones de navegación, búsquedas y compras de los usuarios para construir perfiles conductuales altamente detallados, utilizándolos en publicidad dirigida sin contar con un consentimiento libre, previo e informado (infracción al Art. 6 del GDPR).</p>
-<p><b>2. </b> <b>Opacidad en el Tratamiento de Datos:</b> La empresa no informaba con claridad cómo se combinaban los datos transaccionales con los sistemas de publicidad interna (<i>Amazon Advertising</i>), impidiendo que los usuarios ejercieran sus derechos de acceso, oposición y supresión (Arts. 12 y 13 del GDPR).</p>
-<p><b>3. </b> <b>Uso de Patrones Oscuros (<i>Dark Patterns</i>):</b> Las plataformas digitales estaban diseñadas para inducir a los usuarios a aceptar el rastreo, dificultando deliberadamente la opción de rechazar las cookies publicitarias.</p>
-<br/>
-<h3>2.3. Consecuencias Comerciales, Legales y Reputacionales</h3>
-<li><b>Sanción Económica Récord:</b> Constituyó la mayor multa por privacidad impuesta en la Unión Europea hasta esa fecha.</li>
-<li><b>Obligación de Rediseño Estructural:</b> Amazon debió modificar sus avisos de privacidad y sus mecanismos de consentimiento en toda Europa.</li>
-<li><b>Pérdida de Confianza del Consumidor:</b> El caso fortaleció el reclamo global de los consumidores por una mayor soberanía sobre sus datos personales, impulsando regulaciones similares en América (como la ley <b>CCPA</b> de California y la LGPD en la región).</li>
-<br/>
-<h3>2.4. Lecciones Aprendidas y Principios de Privacidad para Nuestro Proyecto</h3>
-<p>Para la práctica de consultoría en este e-commerce, se adoptan los siguientes estándares éticos:</p>
-<br/>
-<p><b>1. </b> <b>Privacidad por Diseño y por Defecto (<i>Privacy by Design</i>):</b> Recolectar únicamente los datos indispensables para cumplir la transacción comercial.</p>
-<p><b>2. </b> <b>Principio de Minimización:</b> En los informes de gestión y tableros compartidos, no exponer datos sensibles innecesarios (como correos o teléfonos), empleando identificadores anonimizados o pseudonimizados (<code>ID_Cliente</code>).</p>
-<p><b>3. </b> <b>Transparencia y Gestión del Consentimiento:</b> Respetar la voluntad del usuario si solicita darse de baja o eliminar su cuenta de la base de clientes.</p>
-<p><b>4. </b> <b>Seguridad y Control de Accesos:</b> Al utilizar herramientas colaborativas en la nube como Google Sheets y Google Drive, restringir los permisos mediante roles definidos (solo lectura para usuarios generales, edición restringida al equipo autorizado).</p>
-<br/>
-<hr/>
-<br/>
-<h2>3. INVESTIGACIÓN: EXPLORACIÓN Y BÚSQUEDA DE FUENTES DE DATOS PÚBLICAS</h2>
-<br/>
-<p>Para contrastar el desempeño de este e-commerce con patrones de mercado del comercio electrónico global y regional, se identificaron y analizaron <b>tres fuentes de datos públicas abiertas</b>:</p>
-<br/>
-<table border='1' cellspacing='0' cellpadding='8'>
-<thead><tr>
-<th>N°</th>
-<th>Nombre de la Fuente de Datos</th>
-<th>Organización / Entidad</th>
-<th>Enlace de Acceso Público</th>
-<th>Tipos de Datos y Estructura</th>
-<th>Potencial Analítico para E-commerce</th>
-</tr></thead><tbody>
-<tr>
-<td><b>1</b></td>
-<td><b>Digital Economy and Society: E-commerce Statistics</b></td>
-<td>Eurostat (Oficina Europea de Estadística - Comisión Europea)</td>
-<td><a href="https://ec.europa.eu/eurostat/web/digital-economy-and-society/database">Eurostat Data Portal</a></td>
-<td>Series de tiempo tabulares e indicadores multidimensionales (CSV, TSV, SDMX y API REST abierta). Contiene métricas sobre ventas por canal web/EDI (B2C y B2B), porcentaje de compradores digitales (<i>e-shoppers</i>), frecuencia de compra y adopción de medios de pago por país y sector.</td>
-<td><b>Benchmark internacional de penetración digital y adopción:</b> Permite evaluar la tasa de penetración de compras online, comparar la preferencia de medios de pago digitales frente a métodos tradicionales y contrastar patrones de consumo digital con un estándar oficial supranacional.</td>
-</tr>
-<tr>
-<td><b>2</b></td>
-<td><b>Monthly & Quarterly Retail E-Commerce Sales (E-Stats)</b></td>
-<td>U.S. Census Bureau (Oficina del Censo de los EE.UU.)</td>
-<td><a href="https://www.census.gov/retail/ecommerce.html">Census Bureau E-Stats</a></td>
-<td>Series temporales agregadas (XLSX, CSV y API abierta). Datos mensuales y trimestrales de ventas minoristas desglosados en canal tradicional vs. digital.</td>
-<td><b>Análisis macroeconómico y estacional:</b> Facilita medir la cuota de mercado del comercio electrónico (<i>penetration rate</i>), calibrar la estacionalidad interanual (Black Friday, Cyber Monday, fiestas) y proyectar tendencias de crecimiento general.</td>
-</tr>
-<tr>
-<td><b>3</b></td>
-<td><b>Online Retail II Data Set</b></td>
-<td>UCI Machine Learning Repository (University of California, Irvine)</td>
-<td><a href="https://archive.ics.uci.edu/dataset/502/online+retail+ii">UCI Dataset Repository</a></td>
-<td>Transaccional no agregado (más de 1.000.000 de registros en Excel/CSV con transacciones de un e-commerce minorista británico entre 2009 y 2011).</td>
-<td><b>Modelado de Clientes y Canasta:</b> Ideal para ejecutar segmentación avanzada de clientes mediante metodología <b>RFM</b> (Recencia, Frecuencia, Valor Monetario) y minería de reglas de asociación (<i>Market Basket Analysis</i>) para venta cruzada de productos.</td>
-</tr>
-</tbody></table>
-<br/>
-<hr/>
-<br/>
-<h2>4. STATUS DE CALIDAD DE LOS DATOS (DATA QUALITY CHECKLIST)</h2>
-<br/>
-<h3>4.1. Marco de Evaluación Aplicado (Clase 4)</h3>
-<p>En cumplimiento de la actividad práctica de la Clase 4, se auditó el conjunto completo de datos compuesto por: <code>ventas (1).csv</code>, <code>clientes.csv</code>, <code>productos.csv</code>, <code>categorias.csv</code> y <code>metodos_pago.csv</code>.</p>
-<br/>
-<p>Se evaluaron los criterios de calidad: <b>Unicidad, Completitud, Consistencia, Integridad Referencial, Validez y Exactitud</b>.</p>
-<br/>
-<h3>4.2. Registro Consolidado de Hallazgos</h3>
-<br/>
-<table border='1' cellspacing='0' cellpadding='8'>
-<thead><tr>
-<th>Criterio de Calidad</th>
-<th>Archivo / Entidad</th>
-<th>Variable(s) Evaluada(s)</th>
-<th>Hallazgo Diagnóstico</th>
-<th>Nivel de Riesgo</th>
-<th>Acción Correctiva Implementada</th>
-<th>Estado</th>
-</tr></thead><tbody>
-<tr>
-<td><b>Unicidad</b></td>
-<td><code>ventas (1).csv</code></td>
-<td><code>ID_Venta</code> (Clave Primaria)</td>
-<td>Se identificaron <b>29 registros duplicados exactos</b> (3.029 filas totales frente a 3.000 identificadores únicos de venta).</td>
-<td><b>ALTO</b></td>
-<td>Eliminación de duplicados mediante filtrado de primera aparición en la hoja consolidada de Google Sheets.</td>
-<td><b>CORREGIDO</b></td>
-</tr>
-<tr>
-<td><b>Completitud</b></td>
-<td>Todas las tablas</td>
-<td>Todas las columnas</td>
-<td><b>0 valores nulos o celdas vacías</b> en los campos operativos clave (IDs, montos, cantidades, estados).</td>
-<td><b>BAJO</b></td>
-<td>El dataset cuenta con integridad estructural completa; no se requirió imputación artificial de datos.</td>
-<td><b>APROBADO</b></td>
-</tr>
-<tr>
-<td><b>Consistencia de Tipos</b></td>
-<td><code>productos.csv</code></td>
-<td><code>Precio_Unitario</code></td>
-<td>Los valores monetarios figuraban formateados como texto con coma decimal (ej. <code>"12,24"</code>).</td>
-<td><b>ALTO</b></td>
-<td>Transformación mediante fórmula <code>=VALOR(SUSTITUIR(..., ",", "."))</code> para permitir cálculos matemáticos en Sheets.</td>
-<td><b>CORREGIDO</b></td>
-</tr>
-<tr>
-<td><b>Consistencia Léxica</b></td>
-<td><code>clientes.csv</code></td>
-<td>Encabezados y Nombres</td>
-<td>Encabezado con error tipográfico (<code>Fecha_Resgistro</code>) y presencia de caracteres mixtos / espacios accidentales.</td>
-<td><b>MEDIO</b></td>
-<td>Normalización del encabezado y estandarización con <code>=NOMPROPIO(ESPACIOS(...))</code> y <code>=MINUSC(...)</code>.</td>
-<td><b>CORREGIDO</b></td>
-</tr>
-<tr>
-<td><b>Integridad Relacional</b></td>
-<td><code>ventas</code> vs. <code>clientes</code></td>
-<td><code>ID_Cliente</code></td>
-<td><b>100% de coincidencia:</b> Los 326 clientes vinculados en transacciones existen en la tabla maestra de clientes.</td>
-<td><b>NULO</b></td>
-<td>Validación satisfactoria. Unión relacional sin pérdidas mediante <code>=BUSCARV()</code>.</td>
-<td><b>APROBADO</b></td>
-</tr>
-<tr>
-<td><b>Integridad Relacional</b></td>
-<td><code>ventas</code> vs. <code>productos</code></td>
-<td><code>ID_Producto</code></td>
-<td><b>100% de coincidencia:</b> Los 38 productos vendidos coinciden exactamente con el catálogo maestro.</td>
-<td><b>NULO</b></td>
-<td>Validación satisfactoria. Enriquecimiento de categoría y precio sin discrepancias.</td>
-<td><b>APROBADO</b></td>
-</tr>
-<tr>
-<td><b>Validez</b></td>
-<td><code>ventas (1).csv</code></td>
-<td><code>Estado</code></td>
-<td>Los estados de transacción se distribuyen de forma coherente: 2.523 Completas (84.1%), 467 Pendientes (15.6%) y 10 Canceladas (0.3%).</td>
-<td><b>BAJO</b></td>
-<td>Configuración de regla de <b>Validación de Datos</b> (lista desplegable) para blindar futuras entradas de datos.</td>
-<td><b>APROBADO</b></td>
-</tr>
-<tr>
-<td><b>Exactitud</b></td>
-<td><code>ventas (1).csv</code></td>
-<td><code>Cantidad</code>, <code>Fecha</code></td>
-<td>Cantidades acotadas de 1 a 6 unidades por ítem. Fechas válidas distribuidas a lo largo del año 2024.</td>
-<td><b>BAJO</b></td>
-<td>Coherencia lógica de las magnitudes del negocio minorista.</td>
-<td><b>APROBADO</b></td>
-</tr>
-</tbody></table>
-<br/>
-<p><b>Índice Global de Calidad de Datos (DQI):</b> <b>98.5%</b> tras la ejecución de las correcciones de unicidad y normalización de tipos.</p>
-<br/>
-<hr/>
-<br/>
-<h2>5. MODIFICACIONES REALIZADAS SOBRE LOS SETS DE DATOS</h2>
-<br/>
-<p>Siguiendo el principio analítico de <b>inmutabilidad de los datos crudos</b>, los archivos originales se preservaron íntegramente en hojas dedicadas de respaldo (<code>01_Raw_...</code>), ejecutándose todas las operaciones en hojas de trabajo estructuradas dentro de Google Sheets.</p>
-<br/>
-<h3>Paso 1: Preservación de la Capa de Datos Crudos (Hojas <code>01_Raw_...</code>)</h3>
-<p>Se importaron sin alteraciones los 5 archivos fuente en el libro de cálculo:</p>
-<li><code>01_Raw_Ventas</code> (3.029 filas originales)</li>
-<li><code>01_Raw_Clientes</code> (326 registros)</li>
-<li><code>01_Raw_Productos</code> (38 registros)</li>
-<li><code>01_Raw_MetodosPago</code> (5 registros)</li>
-<li><code>01_Raw_Categorias</code> (8 registros)</li>
-<br/>
-<h3>Paso 2: Limpieza y Normalización Dimensional (Hoja: <code>02_Limpieza_Normalizacion</code> - Clase 5)</h3>
-<li><b>Clientes:</b></li>
-<p>  * Se aplicó la fórmula <code>=NOMPROPIO(ESPACIOS('01_Raw_Clientes'!B5))</code> sobre el Nombre y Apellido para remover espacios accidentales y fijar mayúscula inicial.</p>
-<p>  * Se aplicó <code>=MINUSC(ESPACIOS('01_Raw_Clientes'!D5))</code> sobre el Email para garantizar minúsculas uniformes y consistencia de correos.</p>
-<p>  * Se corrigió la referencia del campo de fecha de registro (<code>Fecha_Registro</code>).</p>
-<li><b>Productos:</b></li>
-<p>  * Se aplicó la fórmula <code>=VALOR(SUSTITUIR('01_Raw_Productos'!D5, ",", "."))</code> para convertir el precio unitario de texto a formato numérico decimal, asignando formato contable <code>$#,##0.00</code>.</p>
-<p>  * Se limpiaron los textos de categorías con <code>=ESPACIOS(...)</code>.</p>
-<br/>
-<h3>Paso 3: Deduplicación y Consolidación Relacional (Hoja: <code>03_Consolidado_Ventas</code> - Clase 6)</h3>
-<li>Se filtraron los 29 registros duplicados de <code>ID_Venta</code>, consolidando una base de datos limpia de <b>3.000 ventas únicas</b>.</li>
-<li>Se integraron las dimensiones relacionales utilizando la función <code>=BUSCARV()</code> / <code>=VLOOKUP()</code>:</li>
-<p>  * <b>Nombre Completo del Cliente:</b> <code>=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 2; FALSO) & " " & BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 3; FALSO)</code></p>
-<p>  * <b>Email del Cliente:</b> <code>=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 4; FALSO)</code></p>
-<p>  * <b>Región Geográfica:</b> <code>=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 6; FALSO)</code></p>
-<p>  * <b>Nombre del Producto:</b> <code>=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 2; FALSO)</code></p>
-<p>  * <b>Categoría del Producto:</b> <code>=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 3; FALSO)</code></p>
-<p>  * <b>Precio Unitario Normalizado:</b> <code>=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 4; FALSO)</code></p>
-<p>  * <b>Nombre del Método de Pago:</b> <code>=BUSCARV(N5; '01_Raw_MetodosPago'!$A$5:$B$9; 2; FALSO)</code></p>
-<li><b>Columnas Calculadas Creadas:</b></li>
-<p>  * <b>Mes_Año:</b> <code>=DERECHA(B5; 4) & "-" & EXTRAE(B5; 4; 2)</code> para habilitar análisis temporales agrupados (AAAA-MM).</p>
-<p>  <i> <b>Subtotal_Venta:</b> <code>=K5 </i> L5</code> (Precio Unitario × Cantidad).</p>
-<br/>
-<h3>Paso 4: Análisis Estadístico Descriptivo (Hoja: <code>04_Estadistica_Descriptiva</code> - Clase 7)</h3>
-<p>Se calcularon las medidas de tendencia central y dispersión sobre el monto transaccional:</p>
-<br/>
-<li><b>Media (Promedio):</b> <code>$34.37</code> (<code>=PROMEDIO('03_Consolidado_Ventas'!$M$5:$M$3004)</code>)</li>
-<li><b>Mediana:</b> <code>$26.16</code> (<code>=MEDIANA('03_Consolidado_Ventas'!$M$5:$M$3004)</code>)</li>
-<li><b>Moda:</b> <code>$32.70</code> (<code>=MODA.UNO('03_Consolidado_Ventas'!$M$5:$M$3004)</code>)</li>
-<li><b>Desviación Estándar Muestral:</b> <code>$27.48</code> (<code>=DESVEST.M('03_Consolidado_Ventas'!$M$5:$M$3004)</code>)</li>
-<li><b>Varianza Muestral:</b> <code>755.34</code> (<code>=VAR.S(...)</code>)</li>
-<li><b>Monto Mínimo:</b> <code>$3.25</code> | <b>Monto Máximo:</b> <code>$171.36</code></li>
-<li><b>Rango:</b> <code>$168.11</code></li>
-<li><b>Facturación Bruta Total:</b> <code>$103,103.19</code> (3.000 pedidos)</li>
-<li><b>Facturación Neta Completada:</b> <code>$87,729.89</code> (2.523 pedidos con estado <i>Completa</i>)</li>
-<br/>
-<h4>Interpretación de los Hallazgos Estadísticos:</h4>
-<p><b>1. </b> <b>Asimetría Positiva (Sesgo hacia la derecha):</b> La Media (<code>$34.37</code>) es notablemente superior a la Mediana (<code>$26.16</code>). Esto demuestra que el 50% de las ventas se sitúa por debajo de los <code>$26.16</code>, pero existe un grupo de compras de mayor volumen (alcanzando hasta <code>$171.36</code>) que elevan el promedio. Por ende, la <b>mediana es la medida más representativa del comprador típico</b>.</p>
-<p><b>2. </b> <b>Alta Dispersión de Compra:</b> La desviación estándar de <code>$27.48</code> frente a la media de <code>$34.37</code> refleja una variabilidad marcada (coeficiente de variación del 79.9%), confirmando que conviven clientes minoristas pequeños con compras familiares o mayoristas.</p>
-<p><b>3. </b> <b>Distribución Mensual Estable:</b> Con excepción de enero (mes de inicio con 7 pedidos registrados), las ventas mensuales se mantienen estables entre <code>$8,700</code> y <code>$10,285</code>, registrando su pico máximo en <b>junio de 2024 ($10,285.44)</b> y un segundo pico en <b>marzo de 2024 ($10,046.08)</b>.</p>
-<br/>
-<h3>Paso 5: Tablero de Control y Formato Condicional (Hoja: <code>05_Dashboard_Reporte</code> - Clase 8)</h3>
-<li><b>Tarjetas de KPIs:</b> Resumen de Facturación Total, Volumen de Pedidos, Ticket Promedio y Mediana de Compra.</li>
-<li><b>Segmentación por Categoría:</b> <i>Carnicería</i> lidera la facturación con <code>$27,924.82</code> (27.1%), seguida de <i>Lácteos</i> (<code>$16,093.78</code>) y <i>Congelados</i> (<code>$14,918.25</code>). <i>Conservas</i> representa la menor participación (<code>$4,864.23</code>, 4.7%).</li>
-<li><b>Segmentación por Método de Pago:</b> Preferencia por medios digitales: <i>Mercado Pago</i> concentra <code>$30,561.97</code> (29.6%) y <i>Transferencia bancaria</i> <code>$27,438.07</code> (26.6%).</li>
-<li><b>Segmentación Geográfica:</b> <i>Buenos Aires</i> representa el 35.8% de las ventas (<code>$36,904.41</code>), seguida de la región <i>Centro</i> (<code>$20,083.17</code>) y <i>Patagonia</i> (<code>$18,478.97</code>).</li>
-<li><b>Formato Condicional:</b> Se implementaron escalas de color suaves para identificar los meses y categorías más rentables, y resaltado para transacciones en estado cancelado o pendiente.</li>
-<br/>
-<hr/>
-<br/>
-<p><b>Conclusión:</b></p>
-<p>El desarrollo del proyecto demuestra cómo la aplicación secuencial de las herramientas vistas desde la Clase 1 a la 8 (recolección, auditoría de calidad, limpieza, cruce con fórmulas de búsqueda, estadística descriptiva y visualización gerencial) permite transformar datos transaccionales dispersos en un sistema analítico estructurado y confiable para la toma de decisiones comerciales.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Informe de Consultoría BI - Pre-Entrega Etapa 1 y 2</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 14mm 16mm 14mm 16mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 9.3pt;
+            line-height: 1.45;
+            color: #1e293b;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Page break utilities */
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* Top Header banner */
+        .doc-header {
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .super-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7.5pt;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #0f766e;
+            margin-bottom: 4px;
+        }
+
+        h1 {
+            color: #0f172a;
+            font-size: 15.5pt;
+            font-weight: 800;
+            line-height: 1.25;
+            margin: 0 0 4px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: #1e3a8a;
+            font-size: 11pt;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        /* Metadata Card */
+        .meta-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #1e3a8a;
+            border-radius: 5px;
+            padding: 9px 13px;
+            margin-bottom: 14px;
+            font-size: 8.5pt;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 5px;
+            column-gap: 16px;
+        }
+
+        .meta-item {
+            color: #334155;
+        }
+
+        .meta-item strong {
+            color: #0f172a;
+        }
+
+        .meta-deliverables {
+            margin-top: 7px;
+            padding-top: 6px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 8.2pt;
+        }
+
+        .meta-deliverables span {
+            display: inline-block;
+            margin-right: 6px;
+            margin-top: 2px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            font-size: 7.8pt;
+            color: #1e293b;
+        }
+
+        /* Headings */
+        h2 {
+            color: #0f172a;
+            font-size: 11.5pt;
+            font-weight: 700;
+            border-bottom: 1.5px solid #cbd5e1;
+            padding-bottom: 4px;
+            margin: 14px 0 8px 0;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+        }
+
+        h2.section-header {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border-bottom: none;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 11pt;
+        }
+
+        h3 {
+            color: #0f766e;
+            font-size: 9.8pt;
+            font-weight: 700;
+            margin: 10px 0 4px 0;
+        }
+
+        h4 {
+            color: #1e3a8a;
+            font-size: 9.2pt;
+            font-weight: 700;
+            margin: 8px 0 3px 0;
+        }
+
+        p {
+            font-size: 9pt;
+            color: #334155;
+            text-align: justify;
+            margin: 0 0 6px 0;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 3px 0 7px 0;
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 8.9pt;
+            color: #334155;
+            margin-bottom: 3.5px;
+            text-align: justify;
+        }
+
+        /* Highlights & Codes */
+        code {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 8.3pt;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 8.2pt;
+            border: 1px solid #cbd5e1;
+        }
+
+        th {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 6px 8px;
+            border: 1px solid #cbd5e1;
+            text-align: left;
+            font-size: 8.2pt;
+            letter-spacing: 0.02em;
+        }
+
+        td {
+            padding: 5.5px 8px;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            font-size: 7.5pt;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .badge-corregido {
+            background-color: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .badge-aprobado {
+            background-color: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+
+        .badge-alto {
+            background-color: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .badge-medio {
+            background-color: #fffbeb;
+            color: #92400e;
+            border: 1px solid #fde68a;
+        }
+
+        .badge-bajo {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+
+        .badge-nulo {
+            background-color: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        /* KPI Stat Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 8px 0 10px 0;
+        }
+
+        .kpi-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            padding: 7px 9px;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .kpi-title {
+            font-size: 7.4pt;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.04em;
+            margin-bottom: 2px;
+        }
+
+        .kpi-value {
+            font-size: 13pt;
+            font-weight: 800;
+            color: #1e3a8a;
+            line-height: 1.1;
+        }
+
+        .kpi-sub {
+            font-size: 7.2pt;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        /* Highlight banner */
+        .callout-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #10b981;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin: 8px 0;
+            font-size: 8.8pt;
+        }
+
+        .callout-box.info {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-left: 4px solid #0284c7;
+        }
+
+        /* Running footer */
+        .page-footer {
+            margin-top: 10px;
+            padding-top: 5px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 7.2pt;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== PÁGINA 1 ==================== -->
+    <div class="doc-header">
+        <div class="super-title">
+            <span>Programa BI Consulting · Talento Tech | Min. de Educación</span>
+            <span>Informe Técnico Ejecutivo</span>
+        </div>
+        <h1>PROYECTO INTEGRADOR: CONSULTORÍA DE BUSINESS INTELLIGENCE</h1>
+        <div class="subtitle">Etapas 1 y 2 · Análisis de Ventas en una Empresa de E-Commerce</div>
+    </div>
+
+    <div class="meta-card">
+        <div class="meta-grid">
+            <div class="meta-item"><strong>Entidad de Formación:</strong> Programa BI Consulting – Talento Tech | GCBA</div>
+            <div class="meta-item"><strong>Consultora:</strong> Datawise Consulting</div>
+            <div class="meta-item"><strong>Rol:</strong> Analista de Business Intelligence</div>
+            <div class="meta-item"><strong>Alumno:</strong> Ruben Barrios</div>
+            <div class="meta-item"><strong>Instancia de Evaluación:</strong> Pre-Entrega de Proyecto (Clases 1 a 8)</div>
+            <div class="meta-item"><strong>Fecha de Presentación:</strong> Octubre 2024 / Ciclo 2026</div>
+        </div>
+        <div class="meta-deliverables">
+            <strong>Archivos del Entregable:</strong>
+            <a href="https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt" target="_blank" style="text-decoration: none;"><span style="color: #1e3a8a; font-weight: 600;">📁 Google Drive (Sheets en Vivo) ↗</span></a>
+            <span>Excel/Sheets: TPI_BI_Consulting_Ventas_Ecommerce.xlsx</span>
+            <span>PDF: INFORME_PRE_ENTREGA_BI_CONSULTING.pdf</span>
+            <span>ventas.csv</span>
+            <span>clientes.csv</span>
+            <span>productos.csv</span>
+            <span>categorias.csv</span>
+            <span>metodos_pago.csv</span>
+        </div>
+    </div>
+
+    <h2 class="section-header">1. CAPTACIÓN DEL CLIENTE: LA IMPORTANCIA DE BUSINESS INTELLIGENCE EN E-COMMERCE</h2>
+
+    <h3>1.1. Contexto y Diagnóstico del Negocio</h3>
+    <p>En el entorno competitivo del comercio electrónico actual, las empresas minoristas se enfrentan a un volumen masivo y continuo de microtransacciones generadas a través de múltiples puntos de contacto digitales. Sin embargo, acumular datos no es equivalente a generar valor. En muchas organizaciones, estos datos permanecen dispersos en hojas de cálculo desarticuladas, pasarelas de pago y registros de stock, creando <b>silos de información</b> que imposibilitan una comprensión integral del rendimiento del negocio.</p>
+    <p>Sin una práctica formal de Business Intelligence (BI), la toma de decisiones se apoya en la intuición o en reportes retroactivos estáticos que toman días en consolidarse. Esto conlleva ineficiencias críticas: sobrecostos por rotura o exceso de stock, incapacidad para identificar a los clientes más valiosos, desconocimiento de la fricción en las pasarelas de cobro y falta de visibilidad sobre los márgenes reales por categoría de producto.</p>
+
+    <h3>1.2. Propuesta de Valor y Beneficios Directos de BI</h3>
+    <p>La implementación de metodologías y herramientas de Business Intelligence transforma estos datos transaccionales en <b>activos estratégicos para la toma de decisiones basada en evidencia</b>:</p>
+    <ol>
+        <li><b>Visibilidad Centralizada en Tiempo Real:</b> Centraliza en una única fuente de la verdad (<i>Single Source of Truth</i>) el comportamiento de ventas, inventario y clientes, reduciendo los tiempos de elaboración de informes de semanas a minutos.</li>
+        <li><b>Optimización de Inventario y Rotación por Categoría:</b> Permite cruzar el volumen de ventas con el stock disponible, identificando qué líneas de alta demanda (como <i>Carnicería</i> o <i>Lácteos</i>) requieren reposición ágil frente a líneas de rotación más baja (<i>Conservas</i>).</li>
+        <li><b>Comprensión del Comportamiento del Consumidor:</b> Segmentación por ticket promedio, frecuencia de compra y ubicación geográfica, habilitando el diseño de campañas comerciales dirigidas y promociones personalizadas.</li>
+        <li><b>Eficiencia en Medios de Pago y Cobranza:</b> Diagnóstico de la adopción de billeteras digitales (Mercado Pago), transferencias bancarias y tarjetas, permitiendo monitorear pedidos pendientes y mitigar cancelaciones.</li>
+        <li><b>Mitigación de Riesgos y Control Operativo:</b> Seguimiento en tiempo real de transacciones canceladas y pendientes antes de que afecten la satisfacción del cliente o la liquidez del negocio.</li>
+    </ol>
+
+    <h3>1.3. Ecosistema de Herramientas y Metodología Aplicada</h3>
+    <p>Para este proyecto de consultoría, se implementa una solución ágil y accesible alineada al ecosistema de Google:</p>
+    <ul>
+        <li><b>Google Sheets (Capa de Recolección, Limpieza, Modelado y Análisis):</b> Auditoría inicial con checklists estructurados; saneamiento y uniformización de textos con funciones nativas (<code>ESPACIOS</code>, <code>NOMPROPIO</code>, <code>MINUSC</code>); normalización de datos numéricos (<code>VALOR</code>, <code>SUSTITUIR</code>); integración relacional de tablas con <code>BUSCARV</code>; y cálculo de métricas estadísticas descriptivas (<code>PROMEDIO</code>, <code>MEDIANA</code>, <code>MODA.UNO</code>, <code>DESVEST.M</code>).</li>
+        <li><b>Looker Studio (Capa de Reportería Interactiva y Presentación Gerencial):</b> Conexión directa a las hojas normalizadas de Google Sheets para diseñar tableros dinámicos, facilitando el autoservicio de información a la dirección sin barreras técnicas.</li>
+    </ul>
+
+    <div class="page-footer">
+        <span>Datawise Consulting · Práctica de Business Intelligence</span>
+        <span>Página 1 de 6</span>
+    </div>
+
+    <!-- ==================== PÁGINA 2 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="section-header">2. INVESTIGACIÓN: CONTEXTO ÉTICO Y LEGAL EN EL MANEJO DE DATOS EN E-COMMERCE</h2>
+
+    <h3>2.1. Selección del Caso de Estudio: Sanción Récord del GDPR a Amazon (€746 Millones, 2021)</h3>
+    <p>El comercio electrónico procesa continuamente datos personales sensibles (nombres, domicilios de entrega, números telefónicos, correos electrónicos, historiales de navegación y hábitos de gasto). El límite entre la personalización de la experiencia de compra y la invasión a la privacidad del consumidor es crítico.</p>
+    <p>En julio de 2021, la Comisión Nacional de Protección de Datos de Luxemburgo (CNPD), autoridad líder en la Unión Europea bajo el Reglamento General de Protección de Datos (<b>GDPR</b>), impuso una sanción histórica de <b>746 millones de euros a Amazon Europe Core S.à r.l.</b></p>
+
+    <h3>2.2. Contexto de la Infracción y Faltas a la Ética</h3>
+    <p>El caso se originó a partir de una investigación impulsada por la ONG de derechos digitales <i>La Quadrature du Net</i>, representando a más de 10.000 ciudadanos. Los hallazgos revelaron:</p>
+    <ol>
+        <li><b>Perfilado Publicitario Invasivo sin Consentimiento Válido:</b> Amazon rastreaba los patrones de navegación, búsquedas y compras de los usuarios para construir perfiles conductuales altamente detallados, utilizándolos en publicidad dirigida sin contar con un consentimiento libre, previo e informado (infracción al Art. 6 del GDPR).</li>
+        <li><b>Opacidad en el Tratamiento de Datos:</b> La empresa no informaba con claridad cómo se combinaban los datos transaccionales con los sistemas de publicidad interna (<i>Amazon Advertising</i>), impidiendo que los usuarios ejercieran sus derechos de acceso, oposición y supresión (Arts. 12 y 13 del GDPR).</li>
+        <li><b>Uso de Patrones Oscuros (<i>Dark Patterns</i>):</b> Las plataformas digitales estaban diseñadas para inducir a los usuarios a aceptar el rastreo, dificultando deliberadamente la opción de rechazar las cookies publicitarias.</li>
+    </ol>
+
+    <h3>2.3. Consecuencias Comerciales, Legales y Reputacionales</h3>
+    <ul>
+        <li><b>Sanción Económica Récord:</b> Constituyó la mayor multa por privacidad impuesta en la Unión Europea hasta esa fecha, sentando un precedente judicial ineludible para gigantes tecnológicos.</li>
+        <li><b>Obligación de Rediseño Estructural:</b> Amazon debió modificar sus avisos de privacidad y sus mecanismos de consentimiento en toda Europa, permitiendo rechazo de cookies en un solo clic.</li>
+        <li><b>Pérdida de Confianza del Consumidor:</b> El caso fortaleció el reclamo global de los consumidores por una mayor soberanía sobre sus datos personales, impulsando regulaciones similares en América (como la ley <b>CCPA</b> de California y normativas locales de protección de datos).</li>
+    </ul>
+
+    <h3>2.4. Lecciones Aprendidas y Principios de Privacidad para Nuestro Proyecto</h3>
+    <p>Para la práctica de consultoría en este e-commerce, se adoptan los siguientes estándares éticos y directrices de gobernanza:</p>
+    <ol>
+        <li><b>Privacidad por Diseño y por Defecto (<i>Privacy by Design</i>):</b> Recolectar únicamente los datos indispensables para cumplir la transacción comercial.</li>
+        <li><b>Principio de Minimización:</b> En los informes de gestión y tableros compartidos, no exponer datos sensibles innecesarios (como correos o teléfonos), empleando identificadores anonimizados o pseudonimizados (<code>ID_Cliente</code>).</li>
+        <li><b>Transparencia y Gestión del Consentimiento:</b> Respetar la voluntad del usuario si solicita darse de baja o eliminar su cuenta de la base de clientes.</li>
+        <li><b>Seguridad y Control de Accesos:</b> Al utilizar herramientas colaborativas en la nube como Google Sheets y Google Drive, restringir los permisos mediante roles definidos (solo lectura para usuarios generales, edición restringida al equipo autorizado).</li>
+    </ol>
+
+    <div class="callout-box info" style="margin-top: 14px;">
+        <b>Conclusión Ética:</b> La analítica de datos en comercio electrónico debe balancear la rentabilidad comercial con el respeto irrestricto a los derechos digitales de los consumidores, garantizando trazabilidad y confidencialidad en cada fase del ciclo de vida del dato.
+    </div>
+
+    <div class="page-footer">
+        <span>Datawise Consulting · Práctica de Business Intelligence</span>
+        <span>Página 2 de 6</span>
+    </div>
+
+    <!-- ==================== PÁGINA 3 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="section-header">3. INVESTIGACIÓN: EXPLORACIÓN Y BÚSQUEDA DE FUENTES DE DATOS PÚBLICAS</h2>
+
+    <p>Para contrastar el desempeño de este e-commerce con patrones de mercado del comercio electrónico global y regional, se identificaron y analizaron <b>tres fuentes de datos públicas abiertas</b> con alto potencial analítico:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 4%;">N°</th>
+                <th style="width: 22%;">Nombre de la Fuente</th>
+                <th style="width: 20%;">Organización / Entidad</th>
+                <th style="width: 14%;">Enlace de Acceso</th>
+                <th style="width: 20%;">Tipos de Datos y Estructura</th>
+                <th style="width: 20%;">Potencial Analítico para E-commerce</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>1</b></td>
+                <td><b>Digital Economy and Society: E-commerce Statistics</b></td>
+                <td>Eurostat (Oficina Europea de Estadística - Comisión Europea)</td>
+                <td><a href="https://ec.europa.eu/eurostat/web/digital-economy-and-society/database" style="color: #1e3a8a; text-decoration: none; font-weight: 600;">Eurostat Data Portal</a></td>
+                <td>Series de tiempo tabulares e indicadores multidimensionales (CSV, TSV, SDMX, API REST). Métricas sobre ventas B2C/B2B, porcentaje de compradores digitales (<i>e-shoppers</i>), frecuencia de compra y medios de pago.</td>
+                <td><b>Benchmark internacional de penetración digital:</b> Permite contrastar la adopción de billeteras electrónicas frente a tarjetas y evaluar la tasa de penetración de compras online contra un estándar de referencia supranacional.</td>
+            </tr>
+            <tr>
+                <td><b>2</b></td>
+                <td><b>Monthly & Quarterly Retail E-Commerce Sales (E-Stats)</b></td>
+                <td>U.S. Census Bureau (Oficina del Censo de los EE.UU.)</td>
+                <td><a href="https://www.census.gov/retail/ecommerce.html" style="color: #1e3a8a; text-decoration: none; font-weight: 600;">Census Bureau E-Stats</a></td>
+                <td>Series temporales agregadas (XLSX, CSV, API pública). Datos mensuales y trimestrales de ventas minoristas desglosados en canal físico tradicional vs. comercio electrónico.</td>
+                <td><b>Análisis macroeconómico y estacionalidad:</b> Facilita medir la cuota de mercado del canal digital (<i>penetration rate</i>) y calibrar picos de demanda estacionales (eventos de descuento, fin de año, liquidaciones).</td>
+            </tr>
+            <tr>
+                <td><b>3</b></td>
+                <td><b>Online Retail II Data Set</b></td>
+                <td>UCI Machine Learning Repository (University of California, Irvine)</td>
+                <td><a href="https://archive.ics.uci.edu/dataset/502/online+retail+ii" style="color: #1e3a8a; text-decoration: none; font-weight: 600;">UCI Dataset Repository</a></td>
+                <td>Transaccional no agregado (más de 1.000.000 de registros en Excel/CSV de un retail minorista británico con ID cliente, ítem, fecha, cantidad y precio).</td>
+                <td><b>Modelado de Clientes y Canasta:</b> Ideal para ejecutar segmentación avanzada mediante metodología <b>RFM</b> (Recencia, Frecuencia, Valor) y minería de reglas de asociación (<i>Market Basket Analysis</i>) para venta cruzada.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Síntesis de Aplicación Práctica al Negocio</h3>
+    <p>La combinación de estas tres fuentes externas complementa el análisis transaccional interno de la compañía:</p>
+    <ul>
+        <li><b>Nivel Macro (Census / Eurostat):</b> Permite situar el crecimiento del negocio en el contexto macroeconómico, verificando si las variaciones mensuales responden a tendencias generales del mercado minorista.</li>
+        <li><b>Nivel Micro (UCI Online Retail II):</b> Proporciona una base metodológica probada para clustering de clientes, reglas de recomendación de productos y estimación del ciclo de vida del comprador (LTV).</li>
+    </ul>
+
+    <div class="callout-box" style="margin-top: 16px;">
+        <b>Estrategia de Enriquecimiento:</b> Estas fuentes abiertas sientan las bases para las Etapas 3 y 4 del proyecto final, donde se incorporarán análisis predictivos de series de tiempo y modelos de clasificación sobre los clientes del e-commerce.
+    </div>
+
+    <div class="page-footer">
+        <span>Datawise Consulting · Práctica de Business Intelligence</span>
+        <span>Página 3 de 6</span>
+    </div>
+
+    <!-- ==================== PÁGINA 4 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="section-header">4. STATUS DE CALIDAD DE LOS DATOS (DATA QUALITY CHECKLIST)</h2>
+
+    <h3>4.1. Marco de Evaluación Aplicado (Clase 4)</h3>
+    <p>En cumplimiento de la actividad práctica de la Clase 4, se auditó el conjunto completo de datos compuesto por: <code>ventas.csv</code>, <code>clientes.csv</code>, <code>productos.csv</code>, <code>categorias.csv</code> y <code>metodos_pago.csv</code>. Se evaluaron los 6 criterios fundamentales de calidad de la información:</p>
+
+    <h3>4.2. Registro Consolidado de Hallazgos y Diagnóstico</h3>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 14%;">Criterio</th>
+                <th style="width: 13%;">Archivo / Tabla</th>
+                <th style="width: 15%;">Variable Evaluada</th>
+                <th style="width: 25%;">Hallazgo Diagnóstico</th>
+                <th style="width: 8%; text-align: center;">Riesgo</th>
+                <th style="width: 16%;">Acción Correctiva</th>
+                <th style="width: 9%; text-align: center;">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Unicidad</b></td>
+                <td><code>ventas.csv</code></td>
+                <td><code>ID_Venta</code> (PK)</td>
+                <td>Se detectaron <b>29 registros duplicados exactos</b> (3.029 filas totales vs. 3.000 IDs únicos).</td>
+                <td style="text-align: center;"><span class="badge badge-alto">ALTO</span></td>
+                <td>Filtrado de primera aparición y consolidación de 3.000 ventas únicas en Sheets.</td>
+                <td style="text-align: center;"><span class="badge badge-corregido">CORREGIDO</span></td>
+            </tr>
+            <tr>
+                <td><b>Completitud</b></td>
+                <td>Todas las tablas</td>
+                <td>Todas las columnas</td>
+                <td><b>0 valores nulos o celdas vacías</b> en los campos clave (IDs, importes, cantidades, estados).</td>
+                <td style="text-align: center;"><span class="badge badge-bajo">BAJO</span></td>
+                <td>Integridad estructural completa. No se requirió imputación artificial de datos.</td>
+                <td style="text-align: center;"><span class="badge badge-aprobado">APROBADO</span></td>
+            </tr>
+            <tr>
+                <td><b>Consistencia de Tipos</b></td>
+                <td><code>productos.csv</code></td>
+                <td><code>Precio_Unitario</code></td>
+                <td>Valores monetarios formateados como texto con coma decimal (ej. <code>"12,24"</code>).</td>
+                <td style="text-align: center;"><span class="badge badge-alto">ALTO</span></td>
+                <td>Conversión con <code>=VALOR(SUSTITUIR(..., ",", "."))</code> y formato contable <code>$#,##0.00</code>.</td>
+                <td style="text-align: center;"><span class="badge badge-corregido">CORREGIDO</span></td>
+            </tr>
+            <tr>
+                <td><b>Consistencia Léxica</b></td>
+                <td><code>clientes.csv</code></td>
+                <td>Encabezados y Nombres</td>
+                <td>Encabezado con typo (<code>Fecha_Resgistro</code>) y espacios accidentales en nombres.</td>
+                <td style="text-align: center;"><span class="badge badge-medio">MEDIO</span></td>
+                <td>Normalización con <code>=NOMPROPIO(ESPACIOS(...))</code> y <code>=MINUSC(...)</code> para correos.</td>
+                <td style="text-align: center;"><span class="badge badge-corregido">CORREGIDO</span></td>
+            </tr>
+            <tr>
+                <td><b>Integridad Relacional</b></td>
+                <td><code>ventas</code> vs. <code>clientes</code></td>
+                <td><code>ID_Cliente</code> (FK)</td>
+                <td><b>100% de coincidencia:</b> Los 326 clientes vinculados existen en la tabla maestra.</td>
+                <td style="text-align: center;"><span class="badge badge-nulo">NULO</span></td>
+                <td>Validación satisfactoria. Unión relacional sin pérdidas mediante <code>=BUSCARV()</code>.</td>
+                <td style="text-align: center;"><span class="badge badge-aprobado">APROBADO</span></td>
+            </tr>
+            <tr>
+                <td><b>Integridad Relacional</b></td>
+                <td><code>ventas</code> vs. <code>productos</code></td>
+                <td><code>ID_Producto</code> (FK)</td>
+                <td><b>100% de coincidencia:</b> Los 38 productos transaccionados coinciden con el catálogo.</td>
+                <td style="text-align: center;"><span class="badge badge-nulo">NULO</span></td>
+                <td>Enriquecimiento de categoría y precio maestro ejecutado sin discrepancias.</td>
+                <td style="text-align: center;"><span class="badge badge-aprobado">APROBADO</span></td>
+            </tr>
+            <tr>
+                <td><b>Validez</b></td>
+                <td><code>ventas.csv</code></td>
+                <td><code>Estado</code></td>
+                <td>Distribución coherente: 2.523 Completas (84.1%), 467 Pendientes (15.6%), 10 Canceladas (0.3%).</td>
+                <td style="text-align: center;"><span class="badge badge-bajo">BAJO</span></td>
+                <td>Configuración de regla de <b>Validación de Datos</b> (lista desplegable) en el libro.</td>
+                <td style="text-align: center;"><span class="badge badge-aprobado">APROBADO</span></td>
+            </tr>
+            <tr>
+                <td><b>Exactitud</b></td>
+                <td><code>ventas.csv</code></td>
+                <td><code>Cantidad</code>, <code>Fecha</code></td>
+                <td>Cantidades acotadas de 1 a 6 unidades por ítem. Fechas válidas en el año 2024.</td>
+                <td style="text-align: center;"><span class="badge badge-bajo">BAJO</span></td>
+                <td>Coherencia lógica de magnitudes comerciales para venta minorista.</td>
+                <td style="text-align: center;"><span class="badge badge-aprobado">APROBADO</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout-box" style="margin-top: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <strong style="color: #065f46; font-size: 10pt;">Índice Global de Calidad de Datos (DQI): 98.5%</strong><br/>
+                <span style="font-size: 8.2pt; color: #047857;">Tras subsanar la unicidad de transacciones y normalizar tipos numéricos, el conjunto de datos cuenta con aptitud óptima para modelado analítico y reportería en producción.</span>
+            </div>
+            <div style="font-size: 18pt; font-weight: 800; color: #059669; padding-left: 14px;">98.5%</div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>Datawise Consulting · Práctica de Business Intelligence</span>
+        <span>Página 4 de 6</span>
+    </div>
+
+    <!-- ==================== PÁGINA 5 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="section-header">5. MODIFICACIONES REALIZADAS SOBRE LOS SETS DE DATOS</h2>
+
+    <p>Siguiendo el principio de <b>inmutabilidad de los datos crudos</b>, los archivos fuente originales se preservaron intactos en hojas de respaldo (<code>01_Raw_...</code>), ejecutándose todas las transformaciones de limpieza y consolidación en hojas de trabajo estructuradas en Google Sheets.</p>
+
+    <h3>Paso 1: Preservación de la Capa de Datos Crudos (Hojas <code>01_Raw_...</code>)</h3>
+    <p>Se importaron sin alteraciones los 5 conjuntos de datos transaccionales y dimensionales:</p>
+    <ul>
+        <li><code>01_Raw_Ventas</code> (3.029 filas originales de transacciones brutas).</li>
+        <li><code>01_Raw_Clientes</code> (326 registros maestros de clientes).</li>
+        <li><code>01_Raw_Productos</code> (38 registros de catálogo de artículos).</li>
+        <li><code>01_Raw_MetodosPago</code> (5 registros de medios de cobro).</li>
+        <li><code>01_Raw_Categorias</code> (8 registros de familias comerciales).</li>
+    </ul>
+
+    <h3>Paso 2: Limpieza y Normalización Dimensional (Hoja: <code>02_Limpieza_Normalizacion</code> - Clase 5)</h3>
+    <ul>
+        <li><b>Clientes:</b>
+            <ul>
+                <li>Nombre y Apellido saneados mediante fórmula: <code>=NOMPROPIO(ESPACIOS('01_Raw_Clientes'!B5))</code> para corregir espaciado irregular y capitalización.</li>
+                <li>Normalización de correos electrónicos con: <code>=MINUSC(ESPACIOS('01_Raw_Clientes'!D5))</code> para garantizar uniformidad en claves de contacto.</li>
+                <li>Corrección del encabezado de fecha de alta a <code>Fecha_Registro</code>.</li>
+            </ul>
+        </li>
+        <li><b>Productos:</b>
+            <ul>
+                <li>Conversión de precio de texto a valor numérico contable: <code>=VALOR(SUSTITUIR('01_Raw_Productos'!D5, ",", "."))</code>, aplicando formato <code>$#,##0.00</code>.</li>
+                <li>Eliminación de espacios residuales en descripciones de familias con <code>=ESPACIOS(...)</code>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Paso 3: Deduplicación y Consolidación Relacional (Hoja: <code>03_Consolidado_Ventas</code> - Clase 6)</h3>
+    <ul>
+        <li><b>Deduplicación Estructural:</b> Se eliminaron los 29 registros duplicados de <code>ID_Venta</code>, consolidando una base depurada de <b>3.000 ventas únicas</b>.</li>
+        <li><b>Enriquecimiento Relacional con <code>=BUSCARV()</code>:</b>
+            <ul>
+                <li><b>Nombre del Cliente:</b> <code>=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 2; FALSO) & " " & BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 3; FALSO)</code></li>
+                <li><b>Email del Cliente:</b> <code>=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 4; FALSO)</code></li>
+                <li><b>Región Geográfica:</b> <code>=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 6; FALSO)</code></li>
+                <li><b>Nombre del Producto:</b> <code>=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 2; FALSO)</code></li>
+                <li><b>Categoría del Producto:</b> <code>=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 3; FALSO)</code></li>
+                <li><b>Precio Unitario Maestro:</b> <code>=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 4; FALSO)</code></li>
+                <li><b>Nombre del Método de Pago:</b> <code>=BUSCARV(N5; '01_Raw_MetodosPago'!$A$5:$B$9; 2; FALSO)</code></li>
+            </ul>
+        </li>
+        <li><b>Columnas Calculadas Incorporadas:</b>
+            <ul>
+                <li><b>Mes_Año:</b> <code>=DERECHA(B5; 4) & "-" & EXTRAE(B5; 4; 2)</code> para posibilitar agrupamiento cronológico (AAAA-MM).</li>
+                <li><b>Subtotal_Venta:</b> <code>=K5 * L5</code> (Precio Unitario × Cantidad facturada).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="page-footer">
+        <span>Datawise Consulting · Práctica de Business Intelligence</span>
+        <span>Página 5 de 6</span>
+    </div>
+
+    <!-- ==================== PÁGINA 6 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="section-header">5. MODIFICACIONES (CONT.): ANÁLISIS ESTADÍSTICO, DASHBOARD Y CONCLUSIÓN</h2>
+
+    <h3>Paso 4: Análisis Estadístico Descriptivo (Hoja: <code>04_Estadistica_Descriptiva</code> - Clase 7)</h3>
+    <p>Se procesaron las medidas de tendencia central y dispersión sobre el importe facturado de las 3.000 ventas:</p>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-title">Media (Promedio)</div>
+            <div class="kpi-value">$34.37</div>
+            <div class="kpi-sub"><code>=PROMEDIO(...)</code></div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Mediana (Típico)</div>
+            <div class="kpi-value">$26.16</div>
+            <div class="kpi-sub"><code>=MEDIANA(...)</code></div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Moda</div>
+            <div class="kpi-value">$32.70</div>
+            <div class="kpi-sub"><code>=MODA.UNO(...)</code></div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Desv. Estándar</div>
+            <div class="kpi-value">$27.48</div>
+            <div class="kpi-sub"><code>=DESVEST.M(...)</code></div>
+        </div>
+    </div>
+
+    <div class="kpi-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: -3px;">
+        <div class="kpi-card">
+            <div class="kpi-title">Facturación Bruta Total</div>
+            <div class="kpi-value" style="font-size: 11pt;">$103,103.19</div>
+            <div class="kpi-sub">3.000 pedidos totales</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Facturación Neta Completa</div>
+            <div class="kpi-value" style="font-size: 11pt; color: #047857;">$87,729.89</div>
+            <div class="kpi-sub">2.523 pedidos con estado Completa</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Rango de Importes</div>
+            <div class="kpi-value" style="font-size: 11pt; color: #475569;">$3.25 a $171.36</div>
+            <div class="kpi-sub">Rango: $168.11 · Varianza: 755.34</div>
+        </div>
+    </div>
+
+    <h4>Interpretación de los Hallazgos Estadísticos:</h4>
+    <ol>
+        <li><b>Asimetría Positiva (Sesgo a la Derecha):</b> La Media ($34.37) supera a la Mediana ($26.16). El 50% de las ventas se sitúa por debajo de los $26.16, pero compras familiares o mayoristas de hasta $171.36 elevan el promedio. La <b>mediana es la medida más representativa del ticket típico</b>.</li>
+        <li><b>Alta Dispersión de Compra:</b> La desviación de $27.48 frente a la media de $34.37 arroja un coeficiente de variación del 79.9%, reflejando marcada heterogeneidad en el volumen de compra de los consumidores.</li>
+        <li><b>Estabilidad Mensual:</b> Tras el inicio en enero, la facturación se mantiene entre $8,700 y $10,285 mensuales, alcanzando su pico en <b>junio de 2024 ($10,285.44)</b> y <b>marzo de 2024 ($10,046.08)</b>.</li>
+    </ol>
+
+    <h3>Paso 5: Tablero de Control y Formato Condicional (Hoja: <code>05_Dashboard_Reporte</code> - Clase 8)</h3>
+    <ul>
+        <li><b>Segmentación por Categoría:</b> <i>Carnicería</i> lidera con $27,924.82 (27.1%), seguida de <i>Lácteos</i> ($16,093.78) y <i>Congelados</i> ($14,918.25). <i>Conservas</i> representa la menor participación ($4,864.23, 4.7%).</li>
+        <li><b>Segmentación por Medio de Pago:</b> Clara preferencia por cobros digitales: <i>Mercado Pago</i> concentra $30,561.97 (29.6%) y <i>Transferencia bancaria</i> $27,438.07 (26.6%).</li>
+        <li><b>Segmentación Geográfica:</b> <i>Buenos Aires</i> representa el 35.8% ($36,904.41), seguida por <i>Centro</i> ($20,083.17) y <i>Patagonia</i> ($18,478.97).</li>
+        <li><b>Formato Condicional:</b> Escalas de color continuas para rendimiento comercial y banderas de alerta visual para pedidos pendientes y cancelados.</li>
+    </ul>
+
+    <div class="callout-box" style="margin-top: 10px; background-color: #f8fafc; border-left: 4px solid #1e3a8a;">
+        <strong style="color: #0f172a;">Conclusión del Proyecto de Consultoría:</strong><br/>
+        <span style="color: #334155;">El desarrollo integral de este entregable demuestra cómo la secuencia metodológica vista en las Clases 1 a 8 (auditoría diagnóstica, normalización de datos, cruces relacionales con fórmulas de búsqueda, modelado estadístico descriptivo y diseño de tableros gerenciales) convierte microtransacciones operativas en un sistema de inteligencia de negocio confiable, escalable y preparado para la toma de decisiones estratégicas.</span>
+    </div>
+
+    <div class="page-footer">
+        <span>Datawise Consulting · Práctica de Business Intelligence</span>
+        <span>Página 6 de 6</span>
+    </div>
+
+</body>
+</html>

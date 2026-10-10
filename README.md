@@ -2,6 +2,9 @@
 
 Trabajo Práctico Integrador (TPI) de **Business Intelligence (BI)** aplicado al análisis de transacciones comerciales, auditoría de calidad de datos, normalización y reportería gerencial en hojas de cálculo.
 
+> 📁 **Carpeta Oficial del Proyecto en Google Drive (Google Sheets & Entregables en Vivo):**  
+> 🔗 [**Abrir Carpeta en Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt)
+
 ---
 
 ## 🚀 Resumen del Proyecto
@@ -26,19 +29,20 @@ Este repositorio documenta el ciclo completo de Business Intelligence (Etapas 1 
 ├── clientes.csv                            # Dataset crudo: directorio de clientes
 ├── metodos_pago.csv                        # Dataset crudo: catálogo de medios de pago
 ├── productos.csv                           # Dataset crudo: catálogo de artículos y precios
-├── ventas (1).csv                          # Dataset crudo: transacciones históricas (3.029 filas)
+├── ventas.csv                              # Dataset crudo: transacciones históricas (3.029 filas)
 ├── TPI_BI_Consulting_Ventas_Ecommerce.xlsx # Libro Excel estructurado con 10 pestañas y fórmulas aplicadas
 ├── INFORME_PRE_ENTREGA_BI_CONSULTING.md    # Informe formal completo listo para entrega (Markdown)
 ├── INFORME_PRE_ENTREGA_BI_CONSULTING.html  # Versión web del informe ejecutivo
+├── INFORME_PRE_ENTREGA_BI_CONSULTING.pdf   # Versión PDF ejecutiva para presentación y evaluación
 ├── Consulting_BI_Talento_Tech.pdf          # Consigna oficial de cátedra
 └── .gitignore                              # Exclusiones de archivos del sistema y temporales
 ```
 
 ---
 
-## 📑 Contenido del Libro de Cálculo (`.xlsx`)
+## 📑 Contenido del Libro de Cálculo (`.xlsx` / Google Sheets)
 
-El archivo [`TPI_BI_Consulting_Ventas_Ecommerce.xlsx`](./TPI_BI_Consulting_Ventas_Ecommerce.xlsx) está diseñado para ser abierto y utilizado directamente en **Google Sheets** o **Microsoft Excel**, organizado en las siguientes hojas:
+El archivo [`TPI_BI_Consulting_Ventas_Ecommerce.xlsx`](./TPI_BI_Consulting_Ventas_Ecommerce.xlsx) está diseñado para ser abierto y utilizado tanto en **Microsoft Excel** como en **Google Sheets**. También se encuentra disponible en vivo en la [**Carpeta Oficial de Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt) con todas las fórmulas nativas aplicadas y organizado en las siguientes hojas:
 
 | N° | Hoja | Propósito y Fórmulas Clave |
 | :---: | :--- | :--- |
@@ -74,7 +78,10 @@ El archivo [`TPI_BI_Consulting_Ventas_Ecommerce.xlsx`](./TPI_BI_Consulting_Venta
 
 ---
 
-## 📄 Informe Formal
-
+## 📄 Informe Formal & Entregables
+ 
 Para consultar el informe académico detallado con el desarrollo de las 5 secciones requeridas (Captación, Marco Ético/Legal, Fuentes Públicas, Checklist de Calidad y Registro de Modificaciones), ver:
-👉 [**Informe de Pre-Entrega (Markdown)**](./INFORME_PRE_ENTREGA_BI_CONSULTING.md) o [**Versión HTML**](./INFORME_PRE_ENTREGA_BI_CONSULTING.html).
+* 📂 [**Carpeta Oficial del Proyecto en Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt) *(Google Sheets interactivo y entregables)*
+* 📄 [**Informe Ejecutivo en PDF**](./INFORME_PRE_ENTREGA_BI_CONSULTING.pdf) *(Documento maquetado a 6 páginas)*
+* 📝 [**Informe de Pre-Entrega (Markdown)**](./INFORME_PRE_ENTREGA_BI_CONSULTING.md)
+* 🌐 [**Versión Web (HTML)**](./INFORME_PRE_ENTREGA_BI_CONSULTING.html)
