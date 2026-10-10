@@ -18,7 +18,7 @@ Este repositorio documenta el ciclo completo de Business Intelligence para una e
 5. **Normalización y Limpieza de Datos:** Eliminación de duplicados y homogeneización de texto (`ESPACIOS`, `NOMPROPIO`, `MAYUSC`).
 6. **Integración Transaccional:** Cruce relacional mediante fórmulas de búsqueda (`BUSCARV`, `INDICE` y `COINCIDIR`).
 7. **Estadística Descriptiva y KPIs:** Métricas de tendencia central y dispersión (media, mediana, moda, desviación estándar).
-8. **Reportería y Visualización:** Dashboard interactivo en Google Sheets / Excel con segmentación por categoría, método de pago y provincia.
+8. **Reportería y Visualización:** Dashboard interactivo en Google Sheets con segmentación por categoría, método de pago y provincia.
 
 ---
 
@@ -30,7 +30,7 @@ Este repositorio documenta el ciclo completo de Business Intelligence para una e
 ├── metodos_pago.csv                        # Dataset crudo: catálogo de medios de pago
 ├── productos.csv                           # Dataset crudo: catálogo de artículos y precios
 ├── ventas.csv                              # Dataset crudo: transacciones históricas (3.029 filas)
-├── TPI_BI_Consulting_Ventas_Ecommerce.xlsx # Libro Excel estructurado con 10 pestañas y fórmulas aplicadas
+├── TPI_BI_Consulting_Ventas_Ecommerce.xlsx # Libro de Google Sheets estructurado con 10 pestañas y fórmulas aplicadas
 ├── INFORME_PRE_ENTREGA_BI_CONSULTING.md    # Informe formal completo listo para entrega (Markdown)
 ├── INFORME_PRE_ENTREGA_BI_CONSULTING.html  # Versión web del informe ejecutivo
 ├── INFORME_PRE_ENTREGA_BI_CONSULTING.pdf   # Versión PDF ejecutiva para presentación y evaluación
@@ -40,9 +40,9 @@ Este repositorio documenta el ciclo completo de Business Intelligence para una e
 
 ---
 
-## 📑 Contenido del Libro de Cálculo (`.xlsx` / Google Sheets)
+## 📑 Estructura del Libro de Trabajo en Google Sheets
 
-El archivo [`TPI_BI_Consulting_Ventas_Ecommerce.xlsx`](./TPI_BI_Consulting_Ventas_Ecommerce.xlsx) está diseñado para ser abierto y utilizado tanto en **Microsoft Excel** como en **Google Sheets**. También se encuentra disponible en vivo en la [**Carpeta Oficial de Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt) con todas las fórmulas nativas aplicadas y organizado en las siguientes hojas:
+El libro de trabajo en **Google Sheets** se encuentra disponible en vivo en la [**Carpeta Oficial de Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt) con todas las fórmulas nativas aplicadas y organizado en las siguientes hojas:
 
 | N° | Hoja | Propósito y Fórmulas Clave |
 | :---: | :--- | :--- |
