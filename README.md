@@ -9,7 +9,7 @@ Trabajo Práctico Integrador (TPI) de **Business Intelligence (BI)** aplicado al
 
 ## 🚀 Resumen del Proyecto
 
-Este repositorio documenta el ciclo completo de Business Intelligence (Etapas 1 y 2, Clases 1 a 8) para una empresa de comercio electrónico minorista:
+Este repositorio documenta el ciclo completo de Business Intelligence para una empresa de comercio electrónico minorista:
 
 1. **Captación de Clientes y Fundamentos de BI:** Justificación de ROI y valor del dato para e-commerce.
 2. **Auditoría Ética y Legal:** Caso de estudio internacional sobre privacidad de datos (normativas GDPR / CCPA) y lecciones aprendidas.
