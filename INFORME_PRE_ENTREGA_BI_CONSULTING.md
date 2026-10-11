@@ -1,180 +1,122 @@
-# PROYECTO INTEGRADOR: CONSULTORÍA DE BUSINESS INTELLIGENCE (ETAPA 1 Y 2)
-## ANÁLISIS DE VENTAS EN UNA EMPRESA DE E-COMMERCE
+# PRE-ENTREGA DE PROYECTO
+## PROYECTO INTEGRADOR: CONSULTORÍA DE BUSINESS INTELLIGENCE
+### Análisis de Ventas en una Empresa de E-Commerce · Fundamentos y Calidad de los Datos
 
 ---
 
-**Entidad de Formación:** Programa BI Consulting – Talento Tech | Ministerio de Educación  
+**Entidad de Formación:** Programa BI Consulting – Talento Tech | Ministerio de Educación / GCBA  
 **Consultora:** Datawise Consulting  
 **Rol:** Analista de Business Intelligence  
-**Alumno:** [Apellido y Nombre del Alumno]  
-**Comisión:** Comisión [xxx]  
-**Instancia de Evaluación:** Pre-Entrega de Proyecto (Clases 1 a 8)  
+**Alumno:** Rubén Barrios  
+**Comisión:** C26228  
 **Fecha:** Octubre 2024 / Ciclo 2026  
-**Archivos del Entregable:**
-* Carpeta en Google Drive: [Ruben Barrios - TPI BI Consulting (Google Sheets)](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt)
-* Archivo de Google Sheets: `TPI_BI_Consulting_Ventas_Ecommerce.xlsx`
-* Archivo de Google Docs: `INFORME_PRE_ENTREGA_BI_CONSULTING`
-* Sets de Datos Originales: `ventas.csv`, `clientes.csv`, `productos.csv`, `categorias.csv`, `metodos_pago.csv`
+
+**Accesos y Entregables del Proyecto:**
+* **Planilla Central en Google Sheets:** [Barrios Rubén - Comisión C26228 - TPI BI Consulting](https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714)
+  * *(Auditoría disponible en la hoja: `formulario calidad de datos`)*
+* **Carpeta del Proyecto en Google Drive:** [Ruben Barrios - TPI BI Consulting](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt)
+* **Documento Editable para Google Docs:** [Fundamentos y Calidad de los Datos.docx](./Fundamentos%20y%20Calidad%20de%20los%20Datos.docx)
+* **Informe en PDF:** [Fundamentos y Calidad de los Datos.pdf](./Fundamentos%20y%20Calidad%20de%20los%20Datos.pdf)
+* **Datasets Fuente (CSV):** `ventas.csv`, `clientes.csv`, `productos.csv`, `categorias.csv`, `metodos_pago.csv`
 
 ---
 
 ## 1. CAPTACIÓN DEL CLIENTE: LA IMPORTANCIA DE BUSINESS INTELLIGENCE EN E-COMMERCE
 
 ### 1.1. Contexto y Diagnóstico del Negocio
-En el entorno competitivo del comercio electrónico actual, las empresas minoristas se enfrentan a un volumen masivo y continuo de microtransacciones generadas a través de múltiples puntos de contacto digitales. Sin embargo, acumular datos no es equivalente a generar valor. En muchas organizaciones, estos datos permanecen dispersos en hojas de cálculo desarticuladas, pasarelas de pago y registros de stock, creando **silos de información** que imposibilitan una comprensión integral del rendimiento del negocio.
+En el comercio electrónico actual, las tiendas digitales generan miles de registros todos los días: pedidos, datos de clientes, productos visitados y cobros por distintos medios de pago. Sin embargo, tener muchos datos acumulados no sirve de nada si se encuentran desordenados.
 
-Sin una práctica formal de Business Intelligence (BI), la toma de decisiones se apoya en la intuición o en reportes retroactivos estáticos que toman días en consolidarse. Esto conlleva ineficiencias críticas: sobrecostos por rotura o exceso de stock, incapacidad para identificar a los clientes más valiosos, desconocimiento de la fricción en las pasarelas de cobro y falta de visibilidad sobre los márgenes reales por categoría de producto.
+En muchas pequeñas y medianas empresas de e-commerce, esta información suele estar repartida en archivos sueltos, planillas sin conexión entre sí o dentro de la propia plataforma de cobro. Esta desorganización hace que la empresa trabaje "a ciegas" o basándose únicamente en la intuición, lo que genera problemas comunes como:
+* Quedarse sin stock de los artículos más vendidos o acumular productos con escasa salida comercial.
+* Desconocer quiénes son los clientes que compran seguido ni cuánto gastan habitualmente.
+* Demorar días o semanas para armar un balance de ventas mensual y conocer la facturación real.
 
-### 1.2. Propuesta de Valor y Beneficios Directos de BI
-La implementación de metodologías y herramientas de Business Intelligence transforma estos datos transaccionales en **activos estratégicos para la toma de decisiones basada en evidencia**:
+### 1.2. Beneficios Directos de Aplicar Business Intelligence (BI)
+La implementación de Business Intelligence (Inteligencia de Negocios) permite ordenar, limpiar y transformar esos datos diarios en información clara y útil para tomar mejores decisiones comerciales:
 
-1. **Visibilidad Centralizada en Tiempo Real:** Centraliza en una única fuente de la verdad (*Single Source of Truth*) el comportamiento de ventas, inventario y clientes, reduciendo los tiempos de elaboración de informes de semanas a minutos.
-2. **Optimización de Inventario y Rotación por Categoría:** Permite cruzar el volumen de ventas con el stock disponible, identificando qué líneas de alta demanda (como *Carnicería* o *Lácteos*) requieren reposición ágil frente a líneas de rotación más baja (*Conservas*).
-3. **Comprensión del Comportamiento del Consumidor:** Segmentación por ticket promedio, frecuencia de compra y ubicación geográfica, habilitando el diseño de campañas comerciales dirigidas y promociones personalizadas.
-4. **Eficiencia en Medios de Pago y Cobranza:** Diagnóstico de la adopción de billeteras digitales (Mercado Pago), transferencias bancarias y tarjetas, permitiendo monitorear pedidos pendientes y mitigar cancelaciones.
-5. **Mitigación de Riesgos y Control Operativo:** Seguimiento en tiempo real de transacciones canceladas y pendientes antes de que afecten la satisfacción del cliente o la liquidez del negocio.
+1. **Visión Centralizada de las Ventas:** Reúne en un solo lugar la información de ventas, productos y clientes, permitiendo saber en minutos cómo está funcionando el negocio sin tener que cruzar archivos a mano.
+2. **Control Inteligente de Inventario:** Permite ver con claridad qué productos se compran con mayor frecuencia (como alimentos frescos o lácteos) para reponerlos a tiempo, y cuáles rotan más lento para evitar compras innecesarias de stock.
+3. **Conocimiento del Perfil de los Clientes:** Ayuda a identificar cuánto gasta en promedio un comprador, de qué zonas geográficas provienen los pedidos y con qué frecuencia regresan a la tienda, facilitando promociones más efectivas.
+4. **Seguimiento de Medios de Pago:** Permite monitorear la preferencia de pago de los usuarios (billeteras virtuales, transferencias o tarjetas) y controlar rápidamente los pedidos que quedan pendientes de pago para evitar cancelaciones.
+5. **Ahorro de Tiempo y Reducción de Errores:** Al tener procesos de datos claros y fórmulas organizadas, se evitan errores humanos de cálculo y se reducen horas de trabajo administrativo.
 
 ### 1.3. Ecosistema de Herramientas y Metodología Aplicada
-Para este proyecto de consultoría, se implementa una solución ágil y accesible alineada al ecosistema de Google:
+Para este proyecto de consultoría se definió una solución accesible, ágil y colaborativa basada en el ecosistema de Google:
 
-* **Google Sheets (Capa de Recolección, Limpieza, Modelado y Análisis):**
-  * Auditoría y control de calidad inicial mediante checklists estructurados.
-  * Saneamiento y uniformización de textos con funciones nativas (`ESPACIOS`, `NOMPROPIO`, `MINUSC`).
-  * Normalización de formatos numéricos y tipos de datos (`VALOR`, `SUSTITUIR`).
-  * Integración relacional de conjuntos de datos con funciones de búsqueda (`BUSCARV`, `INDICE` y `COINCIDIR`).
-  * Análisis exploratorio y cálculo de métricas estadísticas descriptivas (`PROMEDIO`, `MEDIANA`, `MODA.UNO`, `DESVEST.M`).
-  * Vistas controladas y agregaciones con `QUERY`, `SUMAR.SI` y `CONTAR.SI`.
-* **Looker Studio (Capa de Reportería Interactiva y Presentación Gerencial):**
-  * Conexión directa a las hojas normalizadas de Google Sheets para diseñar tableros dinámicos, facilitando el autoservicio de información a la dirección de la empresa sin barreras técnicas.
+* **Google Sheets (Herramienta Principal de Trabajo Actual):**
+  * Es la plataforma utilizada para importar los datos crudos, realizar la auditoría de calidad mediante listas de verificación, limpiar y estandarizar la información, cruzar tablas mediante fórmulas (`BUSCARV`) y consolidar las tablas maestras.
+* **Looker Studio (Próximo Paso del Proyecto):**
+  * Constituye la **siguiente etapa planificada** del proyecto. Una vez consolidados y verificados los datos limpios en Google Sheets, se avanzará en la conexión con Looker Studio para diseñar tableros dinámicos e interactivos que faciliten la visualización gráfica de los resultados a los responsables del negocio.
 
 ---
 
 ## 2. INVESTIGACIÓN: CONTEXTO ÉTICO Y LEGAL EN EL MANEJO DE DATOS EN E-COMMERCE
 
-### 2.1. Selección del Caso de Estudio: Sanción Récord del GDPR a Amazon (€746 Millones, 2021)
-El comercio electrónico procesa continuamente datos personales sensibles (nombres, domicilios de entrega, números telefónicos, correos electrónicos, historiales de navegación y hábitos de gasto). El límite entre la personalización de la experiencia de compra y la invasión a la privacidad del consumidor es crítico.
+### 2.1. Selección del Caso de Estudio: Sanción del GDPR a Amazon (€746 Millones)
+En el comercio electrónico es indispensable manejar datos personales para concretar las compras: nombres de clientes, direcciones de envío, números de teléfono, correos electrónicos e historiales de productos comprados. El límite entre brindar un buen servicio y vulnerar la privacidad de los usuarios es muy delicado.
 
-En julio de 2021, la Comisión Nacional de Protección de Datos de Luxemburgo (CNPD), autoridad líder en la Unión Europea bajo el Reglamento General de Protección de Datos (**GDPR**), impuso una sanción histórica de **746 millones de euros a Amazon Europe Core S.à r.l.**
+Como caso de estudio para este proyecto, se analizó la sanción impuesta en julio de 2021 por la Comisión Nacional de Protección de Datos de Luxemburgo (CNPD) a **Amazon**, bajo el Reglamento General de Protección de Datos de Europa (**GDPR**), con una multa de **746 millones de euros**.
 
 ### 2.2. Contexto de la Infracción y Faltas a la Ética
-El caso se originó a partir de una investigación impulsada por la ONG de derechos digitales *La Quadrature du Net*, representando a más de 10.000 ciudadanos. Los hallazgos revelaron:
+La investigación comenzó a partir de reclamos de miles de usuarios que notaron que la plataforma rastreaba y utilizaba sus datos sin su consentimiento explícito:
 
-1. **Perfilado Publicitario Invasivo sin Consentimiento Válido:** Amazon rastreaba los patrones de navegación, búsquedas y compras de los usuarios para construir perfiles conductuales altamente detallados, utilizándolos en publicidad dirigida sin contar con un consentimiento libre, previo e informado (infracción al Art. 6 del GDPR).
-2. **Opacidad en el Tratamiento de Datos:** La empresa no informaba con claridad cómo se combinaban los datos transaccionales con los sistemas de publicidad interna (*Amazon Advertising*), impidiendo que los usuarios ejercieran sus derechos de acceso, oposición y supresión (Arts. 12 y 13 del GDPR).
-3. **Uso de Patrones Oscuros (*Dark Patterns*):** Las plataformas digitales estaban diseñadas para inducir a los usuarios a aceptar el rastreo, dificultando deliberadamente la opción de rechazar las cookies publicitarias.
+1. **Seguimiento y Perfilado sin Consentimiento:** Amazon recolectaba información detallada de la navegación y las búsquedas de los compradores para mostrarles publicidad personalizada, sin pedirles una autorización clara y voluntaria antes de hacerlo.
+2. **Falta de Transparencia:** Los términos de uso no explicaban de forma sencilla a las personas cómo se combinaban sus compras con los sistemas de publicidad de la empresa, lo que impedía que los usuarios supieran qué datos suyos se estaban compartiendo.
+3. **Dificultad para Rechazar Cookies:** El diseño del sitio web inducía al usuario a aceptar el seguimiento publicitario, haciendo difícil encontrar la opción para desactivarlo.
 
-### 2.3. Consecuencias Comerciales, Legales y Reputacionales
-* **Sanción Económica Récord:** Constituyó la mayor multa por privacidad impuesta en la Unión Europea hasta esa fecha.
-* **Obligación de Rediseño Estructural:** Amazon debió modificar sus avisos de privacidad y sus mecanismos de consentimiento en toda Europa.
-* **Pérdida de Confianza del Consumidor:** El caso fortaleció el reclamo global de los consumidores por una mayor soberanía sobre sus datos personales, impulsando regulaciones similares en América (como la ley **CCPA** de California y la LGPD en la región).
+### 2.3. Consecuencias del Caso
+* **Sanción Económica Histórica:** Fue la mayor multa por privacidad aplicada en la Unión Europea hasta ese momento, marcando un precedente fundamental en la industria tecnológica.
+* **Obligación de Cambiar Políticas:** La empresa debió rediseñar sus avisos de privacidad y facilitar que las personas elijan qué datos desean compartir con un solo clic.
+* **Impacto en la Reputación:** Creció la exigencia global de los consumidores por un trato más respetuoso y transparente de sus datos personales.
 
-### 2.4. Lecciones Aprendidas y Principios de Privacidad para Nuestro Proyecto
-Para la práctica de consultoría en este e-commerce, se adoptan los siguientes estándares éticos:
+### 2.4. Lecciones Aprendidas y Principios Éticos para Nuestro Proyecto
+Para el trabajo con los datos de este e-commerce, se adoptaron pautas éticas claras y responsables:
 
-1. **Privacidad por Diseño y por Defecto (*Privacy by Design*):** Recolectar únicamente los datos indispensables para cumplir la transacción comercial.
-2. **Principio de Minimización:** En los informes de gestión y tableros compartidos, no exponer datos sensibles innecesarios (como correos o teléfonos), empleando identificadores anonimizados o pseudonimizados (`ID_Cliente`).
-3. **Transparencia y Gestión del Consentimiento:** Respetar la voluntad del usuario si solicita darse de baja o eliminar su cuenta de la base de clientes.
-4. **Seguridad y Control de Accesos:** Al utilizar herramientas colaborativas en la nube como Google Sheets y Google Drive, restringir los permisos mediante roles definidos (solo lectura para usuarios generales, edición restringida al equipo autorizado).
+1. **Principio de Minimización de Datos:** Recolectar únicamente los datos necesarios para procesar los pedidos y despachos.
+2. **Cuidado de la Privacidad:** En los informes y paneles compartidos no es necesario exponer datos sensibles como correos o teléfonos personales; se utilizan identificadores seguros (`ID_Cliente`) para analizar las ventas de forma agregada.
+3. **Respeto a las Decisiones del Cliente:** Respetar de inmediato las solicitudes de clientes que pidan no recibir publicidad o darse de baja de la base de datos.
+4. **Control de Accesos en la Nube:** Al trabajar en Google Sheets y Google Drive, compartir los archivos únicamente con permisos adecuados (modo lectura para visualizadores y edición protegida para el equipo de análisis).
 
 ---
 
 ## 3. INVESTIGACIÓN: EXPLORACIÓN Y BÚSQUEDA DE FUENTES DE DATOS PÚBLICAS
 
-Para contrastar el desempeño de este e-commerce con patrones de mercado del comercio electrónico global y regional, se identificaron y analizaron **tres fuentes de datos públicas abiertas**:
+Para contrastar y enriquecer la información interna de este e-commerce con los patrones y tendencias generales del comercio minorista, se relevaron **tres fuentes públicas de datos abiertas** con alto potencial de análisis:
 
-| N° | Nombre de la Fuente de Datos | Organización / Entidad | Enlace de Acceso Público | Tipos de Datos y Estructura | Potencial Analítico para E-commerce |
-| :---: | :--- | :--- | :--- | :--- | :--- |
-| **1** | **Digital Economy and Society: E-commerce Statistics** | Eurostat (Oficina Europea de Estadística - Comisión Europea) | [Eurostat Data Portal](https://ec.europa.eu/eurostat/web/digital-economy-and-society/database) | Series de tiempo tabulares e indicadores multidimensionales (CSV, TSV, SDMX y API REST abierta). Contiene métricas sobre ventas por canal web/EDI (B2C y B2B), porcentaje de compradores digitales (*e-shoppers*), frecuencia de compra y adopción de medios de pago por país y sector. | **Benchmark internacional de penetración digital y adopción:** Permite evaluar la tasa de penetración de compras online, comparar la preferencia de medios de pago digitales frente a métodos tradicionales y contrastar patrones de consumo digital con un estándar oficial supranacional. |
-| **2** | **Monthly & Quarterly Retail E-Commerce Sales (E-Stats)** | U.S. Census Bureau (Oficina del Censo de los EE.UU.) | [Census Bureau E-Stats](https://www.census.gov/retail/ecommerce.html) | Series temporales agregadas (XLSX, CSV y API abierta). Datos mensuales y trimestrales de ventas minoristas desglosados en canal tradicional vs. digital. | **Análisis macroeconómico y estacional:** Facilita medir la cuota de mercado del comercio electrónico (*penetration rate*), calibrar la estacionalidad interanual (Black Friday, Cyber Monday, fiestas) y proyectar tendencias de crecimiento general. |
-| **3** | **Online Retail II Data Set** | UCI Machine Learning Repository (University of California, Irvine) | [UCI Dataset Repository](https://archive.ics.uci.edu/dataset/502/online+retail+ii) | Transaccional no agregado (más de 1.000.000 de registros en Excel/CSV con transacciones de un e-commerce minorista británico entre 2009 y 2011). | **Modelado de Clientes y Canasta:** Ideal para ejecutar segmentación avanzada de clientes mediante metodología **RFM** (Recencia, Frecuencia, Valor Monetario) y minería de reglas de asociación (*Market Basket Analysis*) para venta cruzada de productos. |
+| N° | Nombre de la Fuente | Organización / Enlace de Acceso | Tipos de Datos | Potencial de Análisis para E-commerce |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | **Digital Economy and Society: E-commerce Statistics** | **Eurostat** (Comisión Europea)<br/>[https://ec.europa.eu/eurostat/web/digital-economy-and-society/database](https://ec.europa.eu/eurostat/web/digital-economy-and-society/database) | Series temporales de ventas online, porcentaje de compradores digitales y medios de pago utilizados. | **Benchmark y Comparación:** Permite conocer cómo crece el comercio electrónico en general, qué porcentaje de la población compra online y qué medios de pago eligen los consumidores. |
+| **2** | **Monthly & Quarterly Retail E-Commerce Sales (E-Stats)** | **U.S. Census Bureau** (Oficina del Censo EE.UU.)<br/>[https://www.census.gov/retail/ecommerce.html](https://www.census.gov/retail/ecommerce.html) | Series mensuales y trimestrales de ventas minoristas, comparando tiendas físicas vs. canal digital. | **Análisis de Estacionalidad:** Permite identificar los meses del año con mayor volumen de compras y evaluar si las ventas de nuestra tienda acompañan las tendencias del mercado. |
+| **3** | **Online Retail II Data Set** | **UCI Machine Learning Repository**<br/>[https://archive.ics.uci.edu/dataset/502/online+retail+ii](https://archive.ics.uci.edu/dataset/502/online+retail+ii) | Transacciones reales de un e-commerce minorista con código de compra, artículo, fecha, cantidad y precio. | **Hábitos del Consumidor:** Proporciona una base práctica para estudiar qué productos suelen comprarse juntos en un mismo pedido y analizar la frecuencia de compra de los usuarios. |
 
----
-
-## 4. STATUS DE CALIDAD DE LOS DATOS (DATA QUALITY CHECKLIST)
-
-### 4.1. Marco de Evaluación Aplicado (Clase 4)
-En cumplimiento de la actividad práctica de la Clase 4, se auditó el conjunto completo de datos compuesto por: `ventas.csv`, `clientes.csv`, `productos.csv`, `categorias.csv` y `metodos_pago.csv`.
-
-Se evaluaron los criterios de calidad: **Unicidad, Completitud, Consistencia, Integridad Referencial, Validez y Exactitud**.
-
-### 4.2. Registro Consolidado de Hallazgos
-
-| Criterio de Calidad | Archivo / Entidad | Variable(s) Evaluada(s) | Hallazgo Diagnóstico | Nivel de Riesgo | Acción Correctiva Implementada | Estado |
-| :--- | :--- | :--- | :--- | :---: | :--- | :---: |
-| **Unicidad** | `ventas.csv` | `ID_Venta` (Clave Primaria) | Se identificaron **29 registros duplicados exactos** (3.029 filas totales frente a 3.000 identificadores únicos de venta). | **ALTO** | Eliminación de duplicados mediante filtrado de primera aparición en la hoja consolidada de Google Sheets. | **CORREGIDO** |
-| **Completitud** | Todas las tablas | Todas las columnas | **0 valores nulos o celdas vacías** en los campos operativos clave (IDs, montos, cantidades, estados). | **BAJO** | El dataset cuenta con integridad estructural completa; no se requirió imputación artificial de datos. | **APROBADO** |
-| **Consistencia de Tipos** | `productos.csv` | `Precio_Unitario` | Los valores monetarios figuraban formateados como texto con coma decimal (ej. `"12,24"`). | **ALTO** | Transformación mediante fórmula `=VALOR(SUSTITUIR(..., ",", "."))` para permitir cálculos matemáticos en Sheets. | **CORREGIDO** |
-| **Consistencia Léxica** | `clientes.csv` | Encabezados y Nombres | Encabezado con error tipográfico (`Fecha_Resgistro`) y presencia de caracteres mixtos / espacios accidentales. | **MEDIO** | Normalización del encabezado y estandarización con `=NOMPROPIO(ESPACIOS(...))` y `=MINUSC(...)`. | **CORREGIDO** |
-| **Integridad Relacional** | `ventas` vs. `clientes` | `ID_Cliente` | **100% de coincidencia:** Los 326 clientes vinculados en transacciones existen en la tabla maestra de clientes. | **NULO** | Validación satisfactoria. Unión relacional sin pérdidas mediante `=BUSCARV()`. | **APROBADO** |
-| **Integridad Relacional** | `ventas` vs. `productos` | `ID_Producto` | **100% de coincidencia:** Los 38 productos vendidos coinciden exactamente con el catálogo maestro. | **NULO** | Validación satisfactoria. Enriquecimiento de categoría y precio sin discrepancias. | **APROBADO** |
-| **Validez** | `ventas.csv` | `Estado` | Los estados de transacción se distribuyen de forma coherente: 2.523 Completas (84.1%), 467 Pendientes (15.6%) y 10 Canceladas (0.3%). | **BAJO** | Configuración de regla de **Validación de Datos** (lista desplegable) para blindar futuras entradas de datos. | **APROBADO** |
-| **Exactitud** | `ventas.csv` | `Cantidad`, `Fecha` | Cantidades acotadas de 1 a 6 unidades por ítem. Fechas válidas distribuidas a lo largo del año 2024. | **BAJO** | Coherencia lógica de las magnitudes del negocio minorista. | **APROBADO** |
-
-**Índice Global de Calidad de Datos (DQI):** **98.5%** tras la ejecución de las correcciones de unicidad y normalización de tipos.
+### Síntesis de Aplicación Práctica al Negocio
+La combinación de estas tres fuentes externas complementa el análisis transaccional interno de la compañía:
+* **Nivel Macro (Eurostat y Census Bureau):** Permite situar el crecimiento del negocio en el contexto macroeconómico, verificando si las variaciones en las ventas mensuales responden a tendencias comunes de todo el mercado minorista.
+* **Nivel Micro (UCI Online Retail II):** Ofrece un caso real de compras minoristas para entender el comportamiento de los clientes, cómo combinan productos en el carrito y con qué frecuencia regresan a comprar.
 
 ---
 
-## 5. MODIFICACIONES REALIZADAS SOBRE LOS SETS DE DATOS
+## 4. OBTENCIÓN DE DATOS Y CHECKLIST DE CALIDAD EN GOOGLE SHEETS
 
-Siguiendo el principio analítico de **inmutabilidad de los datos crudos**, los archivos originales se preservaron íntegramente en hojas dedicadas de respaldo (`01_Raw_...`), ejecutándose todas las operaciones en hojas de trabajo estructuradas dentro de Google Sheets.
+### 4.1. Importación y Referencia a la Planilla de Google Sheets
+Para iniciar el proyecto, se importó el conjunto de datos de ventas junto con los catálogos auxiliares (clientes, productos, categorías y medios de pago) a Google Sheets. Siguiendo las buenas prácticas, los archivos originales se preservaron intactos en hojas de respaldo independientes (`01_Raw_...`).
 
-### Paso 1: Preservación de la Capa de Datos Crudos (Hojas `01_Raw_...`)
-Se importaron sin alteraciones los 5 archivos fuente en el libro de cálculo:
-* `01_Raw_Ventas` (3.029 filas originales)
-* `01_Raw_Clientes` (326 registros)
-* `01_Raw_Productos` (38 registros)
-* `01_Raw_MetodosPago` (5 registros)
-* `01_Raw_Categorias` (8 registros)
+Para evaluar la calidad de los datos, se diseñó e implementó un formulario con checklist estructurado, el cual se encuentra completamente documentado y disponible para consulta directa en:
+* **Planilla de Google Sheets:** [Barrios Rubén - Comisión C26228 - TPI BI Consulting](https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714)
+* **Pestaña Específica del Formulario:** `formulario calidad de datos`
 
-### Paso 2: Limpieza y Normalización Dimensional (Hoja: `02_Limpieza_Normalizacion` - Clase 5)
-* **Clientes:**
-  * Se aplicó la fórmula `=NOMPROPIO(ESPACIOS('01_Raw_Clientes'!B5))` sobre el Nombre y Apellido para remover espacios accidentales y fijar mayúscula inicial.
-  * Se aplicó `=MINUSC(ESPACIOS('01_Raw_Clientes'!D5))` sobre el Email para garantizar minúsculas uniformes y consistencia de correos.
-  * Se corrigió la referencia del campo de fecha de registro (`Fecha_Registro`).
-* **Productos:**
-  * Se aplicó la fórmula `=VALOR(SUSTITUIR('01_Raw_Productos'!D5, ",", "."))` para convertir el precio unitario de texto a formato numérico decimal, asignando formato contable `$#,##0.00`.
-  * Se limpiaron los textos de categorías con `=ESPACIOS(...)`.
+### 4.2. Informe Breve de Hallazgos de Calidad de Datos
+Tras aplicar el checklist sobre las 3.000 ventas y sus entidades vinculadas, se registraron los siguientes resultados y dictámenes:
 
-### Paso 3: Deduplicación y Consolidación Relacional (Hoja: `03_Consolidado_Ventas` - Clase 6)
-* Se filtraron los 29 registros duplicados de `ID_Venta`, consolidando una base de datos limpia de **3.000 ventas únicas**.
-* Se integraron las dimensiones relacionales utilizando la función `=BUSCARV()` / `=VLOOKUP()`:
-  * **Nombre Completo del Cliente:** `=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 2; FALSO) & " " & BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 3; FALSO)`
-  * **Email del Cliente:** `=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 4; FALSO)`
-  * **Región Geográfica:** `=BUSCARV(D5; '02_Limpieza_Normalizacion'!$B$7:$H$332; 6; FALSO)`
-  * **Nombre del Producto:** `=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 2; FALSO)`
-  * **Categoría del Producto:** `=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 3; FALSO)`
-  * **Precio Unitario Normalizado:** `=BUSCARV(H5; '02_Limpieza_Normalizacion'!$J$7:$O$44; 4; FALSO)`
-  * **Nombre del Método de Pago:** `=BUSCARV(N5; '01_Raw_MetodosPago'!$A$5:$B$9; 2; FALSO)`
-* **Columnas Calculadas Creadas:**
-  * **Mes_Año:** `=DERECHA(B5; 4) & "-" & EXTRAE(B5; 4; 2)` para habilitar análisis temporales agrupados (AAAA-MM).
-  * **Subtotal_Venta:** `=K5 * L5` (Precio Unitario × Cantidad).
+| Dimensión / Criterio | Campo Auditado | Resultado del Checklist | Estado |
+| :--- | :--- | :--- | :---: |
+| **Completitud** | `ID_Venta`, Fechas, Clientes y Productos | 0 valores nulos o celdas vacías (100% de cobertura en campos obligatorios). | **Conforme** |
+| **Unicidad** | `ID_Venta` (Ventas) | Se detectaron 29 registros duplicados; fueron eliminados quedando 3.000 ventas únicas correlativas. | **Conforme** |
+| **Consistencia (Clientes)** | `ID_Cliente` (Ventas vs. Clientes) | 100% de coincidencias: los 326 clientes vinculados existen en la tabla maestra (0 huérfanos). | **Conforme** |
+| **Consistencia (Productos)** | `ID_Producto` (Ventas vs. Productos) | 100% de coincidencias: los 38 productos vendidos existen en el catálogo (0 huérfanos). | **Conforme** |
+| **Validez de Datos** | `Estado`, `Cantidad` y Fechas | Estados válidos (Completas, Pendientes, Canceladas); cantidades positivas de 1 a 6; año 2024. | **Conforme** |
+| **Precisión y Formato** | Precios y Textos | Precios con coma convertidos a número contable y textos estandarizados con fórmulas nativas. | **Conforme** |
 
-### Paso 4: Análisis Estadístico Descriptivo (Hoja: `04_Estadistica_Descriptiva` - Clase 7)
-Se calcularon las medidas de tendencia central y dispersión sobre el monto transaccional:
-
-* **Media (Promedio):** `$34.37` (`=PROMEDIO('03_Consolidado_Ventas'!$M$5:$M$3004)`)
-* **Mediana:** `$26.16` (`=MEDIANA('03_Consolidado_Ventas'!$M$5:$M$3004)`)
-* **Moda:** `$32.70` (`=MODA.UNO('03_Consolidado_Ventas'!$M$5:$M$3004)`)
-* **Desviación Estándar Muestral:** `$27.48` (`=DESVEST.M('03_Consolidado_Ventas'!$M$5:$M$3004)`)
-* **Varianza Muestral:** `755.34` (`=VAR.S(...)`)
-* **Monto Mínimo:** `$3.25` | **Monto Máximo:** `$171.36`
-* **Rango:** `$168.11`
-* **Facturación Bruta Total:** `$103,103.19` (3.000 pedidos)
-* **Facturación Neta Completada:** `$87,729.89` (2.523 pedidos con estado *Completa*)
-
-#### Interpretación de los Hallazgos Estadísticos:
-1. **Asimetría Positiva (Sesgo hacia la derecha):** La Media (`$34.37`) es notablemente superior a la Mediana (`$26.16`). Esto demuestra que el 50% de las ventas se sitúa por debajo de los `$26.16`, pero existe un grupo de compras de mayor volumen (alcanzando hasta `$171.36`) que elevan el promedio. Por ende, la **mediana es la medida más representativa del comprador típico**.
-2. **Alta Dispersión de Compra:** La desviación estándar de `$27.48` frente a la media de `$34.37` refleja una variabilidad marcada (coeficiente de variación del 79.9%), confirmando que conviven clientes minoristas pequeños con compras familiares o mayoristas.
-3. **Distribución Mensual Estable:** Con excepción de enero (mes de inicio con 7 pedidos registrados), las ventas mensuales se mantienen estables entre `$8,700` y `$10,285`, registrando su pico máximo en **junio de 2024 ($10,285.44)** y un segundo pico en **marzo de 2024 ($10,046.08)**.
-
-### Paso 5: Tablero de Control y Formato Condicional (Hoja: `05_Dashboard_Reporte` - Clase 8)
-* **Tarjetas de KPIs:** Resumen de Facturación Total, Volumen de Pedidos, Ticket Promedio y Mediana de Compra.
-* **Segmentación por Categoría:** *Carnicería* lidera la facturación con `$27,924.82` (27.1%), seguida de *Lácteos* (`$16,093.78`) y *Congelados* (`$14,918.25`). *Conservas* representa la menor participación (`$4,864.23`, 4.7%).
-* **Segmentación por Método de Pago:** Preferencia por medios digitales: *Mercado Pago* concentra `$30,561.97` (29.6%) y *Transferencia bancaria* `$27,438.07` (26.6%).
-* **Segmentación Geográfica:** *Buenos Aires* representa el 35.8% de las ventas (`$36,904.41`), seguida de la región *Centro* (`$20,083.17`) y *Patagonia* (`$18,478.97`).
-* **Formato Condicional:** Se implementaron escalas de color suaves para identificar los meses y categorías más rentables, y resaltado para transacciones en estado cancelado o pendiente.
-
----
-
-**Conclusión:**  
-El desarrollo del proyecto demuestra cómo la aplicación secuencial de las herramientas vistas desde la Clase 1 a la 8 (recolección, auditoría de calidad, limpieza, cruce con fórmulas de búsqueda, estadística descriptiva y visualización gerencial) permite transformar datos transaccionales dispersos en un sistema analítico estructurado y confiable para la toma de decisiones comerciales.
+> **Dictamen Final de Calidad: Aprobado (100% Conforme)**  
+> **Métricas Globales:** 3.000 registros únicos · 0 celdas vacías · Integridad referencial 100% OK.  
+> *Nota: Toda la preparación de datos, fórmulas de búsqueda (`BUSCARV`) y transformaciones analíticas avanzadas se encuentran estructuradas y documentadas directamente en el libro de Google Sheets.*

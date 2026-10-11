@@ -1,87 +1,96 @@
 # 📊 Business Intelligence Consulting — Análisis de Ventas E-commerce
 
-Trabajo Práctico Integrador (TPI) de **Business Intelligence (BI)** aplicado al análisis de transacciones comerciales, auditoría de calidad de datos, normalización y reportería gerencial en hojas de cálculo.
+Repositorio del Proyecto Integrador de **Business Intelligence (BI)** aplicado al análisis de transacciones comerciales, auditoría y control de calidad de datos, normalización y reportería gerencial en hojas de cálculo.
 
-> 📁 **Carpeta Oficial del Proyecto en Google Drive (Google Sheets & Entregables en Vivo):**  
-> 🔗 [**Abrir Carpeta en Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt)
+* **Consultora:** Datawise Consulting  
+* **Rol:** Analista de Business Intelligence  
+* **Alumno:** Rubén Barrios  
+* **Comisión:** C26228  
 
 ---
 
-## 🚀 Resumen del Proyecto
+## 🔗 Accesos Directos del Proyecto
 
-Este repositorio documenta el ciclo completo de Business Intelligence para una empresa de comercio electrónico minorista:
+* 📊 [**Planilla Oficial en Google Sheets**](https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714) *(Libro de trabajo en vivo con fórmulas, datos consolidados y pestaña `formulario calidad de datos`)*
+* 📁 [**Carpeta del Proyecto en Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt)
+* 📝 [**Documento Word para Google Docs (`.docx`)**](./Fundamentos%20y%20Calidad%20de%20los%20Datos.docx) *(Formato editable para subir o abrir directamente en Google Docs)*
+* 📑 [**Informe en PDF (Fundamentos y Calidad de los Datos.pdf)**](./Fundamentos%20y%20Calidad%20de%20los%20Datos.pdf)
+* 📄 [**Informe Ejecutivo (Markdown)**](./INFORME_PRE_ENTREGA_BI_CONSULTING.md) *(Documentado para visualización en GitHub)*
+* 🌐 [**Informe en Formato Web (HTML)**](./INFORME_PRE_ENTREGA_BI_CONSULTING.html)
 
-1. **Captación de Clientes y Fundamentos de BI:** Justificación de ROI y valor del dato para e-commerce.
-2. **Auditoría Ética y Legal:** Caso de estudio internacional sobre privacidad de datos (normativas GDPR / CCPA) y lecciones aprendidas.
-3. **Benchmarking de Fuentes Públicas:** Identificación de fuentes oficiales internacionales (Eurostat, U.S. Census Bureau, UCI ML Repository).
-4. **Data Quality Checklist (Auditoría de Calidad):** Evaluación de unicidad, completitud, consistencia, integridad referencial, validez y exactitud.
-5. **Normalización y Limpieza de Datos:** Eliminación de duplicados y homogeneización de texto (`ESPACIOS`, `NOMPROPIO`, `MAYUSC`).
-6. **Integración Transaccional:** Cruce relacional mediante fórmulas de búsqueda (`BUSCARV`, `INDICE` y `COINCIDIR`).
-7. **Estadística Descriptiva y KPIs:** Métricas de tendencia central y dispersión (media, mediana, moda, desviación estándar).
-8. **Reportería y Visualización:** Dashboard interactivo en Google Sheets con segmentación por categoría, método de pago y provincia.
+---
+
+## 🚀 Contenido del Informe de Pre-Entrega
+
+El informe formal presentado para Google Docs y documentado en este repositorio se estructura en los 4 ejes requeridos por la consigna:
+
+1. **Captación de Clientes y Fundamentos de BI:** Justificación del valor estratégico del dato para un e-commerce, uso de herramientas del ecosistema de Google (Google Sheets en la fase actual y Looker Studio como próximo paso planificado) y beneficios concretos para el negocio.
+2. **Investigación (Contexto Ético y Legal):** Análisis exhaustivo de un caso real de violación a la privacidad de datos (Sanción del GDPR a Amazon por €746M), evaluando contexto, faltas, consecuencias y lecciones aprendidas aplicadas al proyecto.
+3. **Investigación (Exploración de Fuentes Públicas de Datos):** Tabla comparativa con tres fuentes abiertas de datos de e-commerce (Eurostat, U.S. Census Bureau, UCI Machine Learning Repository), incluyendo enlaces de acceso público, tipología de datos y su potencial analítico a nivel macro y micro.
+4. **Obtención de Datos y Checklist de Calidad en Google Sheets:** Auditoría diagnóstica sobre 3.000 transacciones, registrando completitud (100%), unicidad (filtrado de 29 duplicados), consistencia referencial y validez, vinculada a la hoja `formulario calidad de datos`.
+
+> *Nota:* La preparación operativa de datos, transformaciones con fórmulas (`BUSCARV`, `ESPACIOS`, `VALOR`), análisis estadístico descriptivo y tableros de control se encuentran documentados e implementados directamente en la planilla de Google Sheets.
 
 ---
 
 ## 📁 Estructura del Repositorio
 
 ```text
-├── categorias.csv                          # Dataset crudo: categorías de productos
-├── clientes.csv                            # Dataset crudo: directorio de clientes
-├── metodos_pago.csv                        # Dataset crudo: catálogo de medios de pago
-├── productos.csv                           # Dataset crudo: catálogo de artículos y precios
-├── ventas.csv                              # Dataset crudo: transacciones históricas (3.029 filas)
-├── TPI_BI_Consulting_Ventas_Ecommerce.xlsx # Libro de Google Sheets estructurado con 10 pestañas y fórmulas aplicadas
-├── INFORME_PRE_ENTREGA_BI_CONSULTING.md    # Informe formal completo listo para entrega (Markdown)
+├── categorias.csv                          # Dataset fuente: familias de productos
+├── clientes.csv                            # Dataset fuente: padrón de clientes
+├── metodos_pago.csv                        # Dataset fuente: catálogo de medios de pago
+├── productos.csv                           # Dataset fuente: catálogo de artículos y precios
+├── ventas.csv                              # Dataset fuente: transacciones brutas (3.029 filas)
+├── Fundamentos y Calidad de los Datos.docx # Documento Word (.docx) listo para Google Docs
+├── Fundamentos y Calidad de los Datos.pdf  # Informe en PDF maquetado para presentación
+├── INFORME_PRE_ENTREGA_BI_CONSULTING.md    # Informe técnico detallado (Markdown para GitHub)
 ├── INFORME_PRE_ENTREGA_BI_CONSULTING.html  # Versión web del informe ejecutivo
-├── INFORME_PRE_ENTREGA_BI_CONSULTING.pdf   # Versión PDF ejecutiva para presentación y evaluación
-├── Consulting_BI_Talento_Tech.pdf          # Consigna oficial de cátedra
 └── .gitignore                              # Exclusiones de archivos del sistema y temporales
 ```
 
 ---
 
-## 📑 Estructura del Libro de Trabajo en Google Sheets
+## 📑 Estructura de la Planilla en Google Sheets
 
-El libro de trabajo en **Google Sheets** se encuentra disponible en vivo en la [**Carpeta Oficial de Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt) con todas las fórmulas nativas aplicadas y organizado en las siguientes hojas:
+El libro de trabajo en **Google Sheets** se encuentra accesible en [**Barrios Rubén - Comisión C26228 - TPI BI Consulting**](https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714) y está estructurado en las siguientes hojas:
 
-| N° | Hoja | Propósito y Fórmulas Clave |
+| N° | Nombre de Hoja | Propósito y Contenido Principal |
 | :---: | :--- | :--- |
-| `00` | `00_Checklist_Calidad` | Matriz de auditoría diagnóstica y criterios evaluados. |
-| `01` | `01_Raw_Ventas` | Datos crudos transaccionales originales intactos. |
-| `01` | `01_Raw_Clientes` | Datos crudos originales de clientes. |
+| `00` | `formulario calidad de datos` | Matriz de gobernanza y control de calidad (auditoría diagnóstica de dimensiones de calidad). |
+| `01` | `01_Raw_Ventas` | Transacciones brutas originales sin modificaciones (3.029 filas). |
+| `01` | `01_Raw_Clientes` | Datos crudos originales de clientes (326 registros). |
 | `01` | `01_Raw_Productos` | Catálogo original de productos y precios unitarios. |
-| `01` | `01_Raw_MetodosPago` | Catálogo original de formas de pago. |
-| `01` | `01_Raw_Categorias` | Catálogo original de familias de productos. |
-| `02` | `02_Limpieza_Normalizacion` | Transformaciones de texto (`TRIM`/`ESPACIOS`, `PROPER`/`NOMPROPIO`). |
-| `03` | `03_Consolidado_Ventas` | Tabla maestra unificada con cruces (`VLOOKUP`/`BUSCARV`, `INDEX`/`MATCH`). |
-| `04` | `04_Estadistica_Descriptiva` | Métricas estadísticas mensuales (`AVERAGE`, `MEDIAN`, `MODE`, `STDEV.S`). |
-| `05` | `05_Dashboard_Reporte` | Tablas dinámicas, KPIs de negocio y gráficos ejecutivos. |
+| `01` | `01_Raw_MetodosPago` | Catálogo de formas de pago aceptadas. |
+| `01` | `01_Raw_Categorias` | Catálogo de categorías comerciales. |
+| `02` | `02_Limpieza_Normalizacion` | Transformación y estandarización de nombres, correos y conversión de precios con coma decimal a número. |
+| `03` | `03_Consolidado_Ventas` | Tabla maestra unificada con 3.000 ventas únicas y cruces relacionales con `=BUSCARV()`. |
+| `04` | `04_Estadistica_Descriptiva` | Métricas estadísticas de venta: media ($34.37), mediana ($26.16), moda, dispersión y totales facturados. |
+| `05` | `05_Dashboard_Reporte` | Tablero de control con KPIs clave, segmentaciones comerciales y formatos condicionales. |
 
 ---
 
-## 🔍 Hallazgos Principales de Calidad de Datos
+## 🔍 Resumen del Control de Calidad de Datos
 
-* **Unicidad:** Se detectaron y subsanaron **29 registros duplicados exactos** en la tabla de ventas (3.029 filas iniciales $\rightarrow$ 3.000 transacciones netas).
-* **Consistencia e Integridad:** 100% de coherencia referencial entre las tablas operativas; sin registros huérfanos.
-* **Formato de Cadenas:** Se normalizaron espacios redundantes y discrepancias de mayúsculas/minúsculas en nombres de clientes y descripciones.
-
----
-
-## 📈 Métricas de Negocio Destacadas
-
-* **Volumen Total Facturado:** `$103,025.29` en 3.000 pedidos completados y validados.
-* **Ticket Promedio (Media):** `$34.34` por transacción.
-* **Ticket Mediano:** `$27.60` (dispersión moderada con Desviación Estándar de `$24.97`).
-* **Categoría Líder en Facturación:** *Electrónica* (`$38,819.34` — 37.7% del total).
-* **Medio de Pago Principal:** *Tarjeta de Crédito* (48.4% del volumen transaccionado).
-* **Polo Geográfico Clave:** *Buenos Aires* representa el 35.8% de las operaciones comerciales.
+* **Unicidad:** Se identificaron y descartaron **29 registros duplicados** en ventas (de 3.029 filas a 3.000 transacciones únicas).
+* **Completitud:** 100,0% de completitud; 0 celdas vacías en identificadores, fechas y montos clave.
+* **Integridad Referencial:** 100% de coincidencia entre las transacciones y las listas maestras de clientes y productos (0 registros huérfanos).
+* **Validez:** Estados normalizados (Completas, Pendientes y Canceladas), cantidades de 1 a 6 unidades por ítem y fechas acotadas al año 2024.
+* **Dictamen de Auditoría:** Conforme / Aprobado.
 
 ---
 
-## 📄 Informe Formal & Entregables
- 
-Para consultar el informe académico detallado con el desarrollo de las 5 secciones requeridas (Captación, Marco Ético/Legal, Fuentes Públicas, Checklist de Calidad y Registro de Modificaciones), ver:
-* 📂 [**Carpeta Oficial del Proyecto en Google Drive**](https://drive.google.com/drive/folders/1PpibruN527CVEbGAh5XUH-n_kMcCEQCt) *(Google Sheets interactivo y entregables)*
-* 📄 [**Informe Ejecutivo en PDF**](./INFORME_PRE_ENTREGA_BI_CONSULTING.pdf) *(Documento maquetado a 6 páginas)*
-* 📝 [**Informe de Pre-Entrega (Markdown)**](./INFORME_PRE_ENTREGA_BI_CONSULTING.md)
-* 🌐 [**Versión Web (HTML)**](./INFORME_PRE_ENTREGA_BI_CONSULTING.html)
+## 📈 Métricas Comerciales Destacadas
+
+* **Facturación Bruta Total:** `$103,103.19` en 3.000 pedidos procesados.
+* **Facturación Neta Completada:** `$87,729.89` en 2.523 pedidos entregados (*Completa*).
+* **Ticket Promedio:** `$34.37` por compra.
+* **Ticket Típico (Mediana):** `$26.16` (el 50% de las operaciones se sitúa por debajo de este valor).
+* **Categoría Líder:** *Carnicería* con `$27,924.82` (27.1% del total), seguida por *Lácteos* (`$16,093.78`).
+* **Canales de Cobro Principales:** *Mercado Pago* (29.6%) y *Transferencia bancaria* (26.6%).
+* **Polo Geográfico Clave:** *Buenos Aires* concentra el 35.8% de los pedidos totales.
+
+---
+
+## 🧭 Próximos Pasos del Proyecto
+
+* **Looker Studio:** Conexión directa con la base consolidada en Google Sheets para crear un tablero de control gerencial interactivo y dinámico, completando el ciclo de visualización de Business Intelligence.

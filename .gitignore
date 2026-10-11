@@ -5,12 +5,14 @@ Thumbs.db
 
 # Temporary and office lock files
 ~$*.xlsx
+~$*.docx
 *.tmp
 *.bak
 
 # Python artifacts
 __pycache__/
 *.pyc
+.venv/
 
 # IDE configs
 .vscode/
