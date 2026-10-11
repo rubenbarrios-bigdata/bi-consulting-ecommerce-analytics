@@ -380,93 +380,22 @@
         <li><b>Nivel Micro (UCI Online Retail II):</b> Ofrece un caso real de compras minoristas para entender el comportamiento de los clientes, cómo combinan productos en el carrito y con qué frecuencia regresan a comprar.</li>
     </ul>
 
-    <div class="callout-box" style="margin-top: 14px;">
-        <b>Utilidad para el Proyecto:</b> Estas fuentes abiertas sirven como punto de comparación externo para entender el comportamiento del consumidor digital y diseñar estrategias comerciales más efectivas.
-    </div>
+    <h2 class="section-header" style="margin-top: 14px;">4. OBTENCIÓN DE DATOS Y CHECKLIST DE CALIDAD EN GOOGLE SHEETS</h2>
 
-    <div class="page-footer">
-        <span>Datawise Consulting · Proyecto Integrador BI</span>
-        <span>Página 3 de 4</span>
-    </div>
-
-    <!-- ==================== PÁGINA 4 ==================== -->
-    <div class="page-break"></div>
-
-    <h2 class="section-header">4. OBTENCIÓN DE DATOS Y CHECKLIST DE CALIDAD EN GOOGLE SHEETS</h2>
-
-    <h3>4.1. Importación y Referencia a la Planilla de Google Sheets</h3>
-    <p>Para iniciar el proyecto, se importó el conjunto de datos de ventas junto con los catálogos auxiliares (clientes, productos, categorías y medios de pago) a Google Sheets. Siguiendo las buenas prácticas, los archivos originales se preservaron intactos en hojas de respaldo independientes (<code>01_Raw_...</code>).</p>
-    <p>Para evaluar la calidad de los datos, se diseñó e implementó un formulario con checklist estructurado, el cual se encuentra completamente documentado y disponible para consulta directa en:</p>
+    <p>Para iniciar el proyecto, se importó el conjunto de datos de ventas junto con los catálogos auxiliares (clientes, productos, categorías y medios de pago) a Google Sheets. Siguiendo las buenas prácticas analíticas, los archivos originales se preservaron intactos en hojas de respaldo independientes (<code>01_Raw_...</code>).</p>
+    <p>Tal como lo establece la consigna del proyecto, el formulario con el checklist de criterios de calidad de datos y el informe con los hallazgos de la auditoría se encuentran diseñados, aplicados y registrados directamente dentro de la planilla compartida de Google Sheets:</p>
     <ul>
-        <li><b>Planilla de Google Sheets:</b> <a href="https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714" style="color: #1e3a8a; font-weight: 700; text-decoration: none;">Barrios Rubén - Comisión C26228 - TPI BI Consulting ↗</a></li>
-        <li><b>Pestaña Específica del Formulario:</b> <code>formulario calidad de datos</code></li>
+        <li><b>Planilla Central en Google Sheets:</b> <a href="https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: none;">Barrios Rubén - Comisión C26228 - TPI BI Consulting ↗</a></li>
+        <li><b>Hoja Específica del Formulario:</b> <code>formulario calidad de datos</code></li>
     </ul>
 
-    <h3>4.2. Informe Breve de Hallazgos de Calidad de Datos</h3>
-    <p>Tras aplicar el checklist sobre las 3.000 ventas y sus entidades vinculadas, se registraron los siguientes resultados y dictámenes:</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 22%;">Dimensión / Criterio</th>
-                <th style="width: 20%;">Campo Auditado</th>
-                <th style="width: 42%;">Resultado del Checklist</th>
-                <th style="width: 16%; text-align: center;">Estado</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>Completitud</b></td>
-                <td><code>ID_Venta</code>, Fechas, Clientes y Productos</td>
-                <td>0 valores nulos o celdas vacías (100% de cobertura en campos obligatorios).</td>
-                <td style="text-align: center;"><span class="badge badge-corregido">Conforme</span></td>
-            </tr>
-            <tr>
-                <td><b>Unicidad</b></td>
-                <td><code>ID_Venta</code> (Ventas)</td>
-                <td>Se detectaron 29 registros duplicados; fueron eliminados quedando 3.000 ventas únicas correlativas.</td>
-                <td style="text-align: center;"><span class="badge badge-corregido">Conforme</span></td>
-            </tr>
-            <tr>
-                <td><b>Consistencia (Clientes)</b></td>
-                <td><code>ID_Cliente</code> (Ventas vs. Clientes)</td>
-                <td>100% de coincidencias: los 326 clientes vinculados existen en la tabla maestra (0 huérfanos).</td>
-                <td style="text-align: center;"><span class="badge badge-corregido">Conforme</span></td>
-            </tr>
-            <tr>
-                <td><b>Consistencia (Productos)</b></td>
-                <td><code>ID_Producto</code> (Ventas vs. Productos)</td>
-                <td>100% de coincidencias: los 38 productos vendidos existen en el catálogo (0 huérfanos).</td>
-                <td style="text-align: center;"><span class="badge badge-corregido">Conforme</span></td>
-            </tr>
-            <tr>
-                <td><b>Validez de Datos</b></td>
-                <td><code>Estado</code>, <code>Cantidad</code> y Fechas</td>
-                <td>Estados válidos (Completas, Pendientes, Canceladas); cantidades positivas de 1 a 6; año 2024.</td>
-                <td style="text-align: center;"><span class="badge badge-corregido">Conforme</span></td>
-            </tr>
-            <tr>
-                <td><b>Precisión y Formato</b></td>
-                <td>Precios y Textos</td>
-                <td>Precios con coma convertidos a número contable y textos estandarizados con fórmulas nativas.</td>
-                <td style="text-align: center;"><span class="badge badge-corregido">Conforme</span></td>
-            </tr>
-        </tbody>
-    </table>
-
     <div class="callout-box" style="margin-top: 10px;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-                <strong style="color: #065f46; font-size: 9.5pt;">Dictamen Final de Calidad: Aprobado (100% Conforme)</strong><br/>
-                <span style="font-size: 8.2pt; color: #047857;">Métricas Globales: 3.000 registros únicos · 0 celdas vacías · Integridad referencial 100% OK. Toda la preparación, fórmulas de cruce y transformaciones adicionales se encuentran documentadas en el libro de Google Sheets.</span>
-            </div>
-            <div style="font-size: 16pt; font-weight: 800; color: #059669; padding-left: 14px;">100% OK</div>
-        </div>
+        <b>Ubicación de la Auditoría:</b> El checklist aplicado en la hoja <code>formulario calidad de datos</code> audita las dimensiones de Completitud, Unicidad, Consistencia, Validez y Precisión sobre las 3.000 ventas únicas y sus catálogos vinculados, arrojando un cumplimiento global del 100% Conforme y dictamen Aprobado.
     </div>
 
     <div class="page-footer">
         <span>Datawise Consulting · Proyecto Integrador BI</span>
-        <span>Página 4 de 4</span>
+        <span>Página 3 de 3</span>
     </div>
 
 </body>

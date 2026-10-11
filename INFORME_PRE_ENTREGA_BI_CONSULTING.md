@@ -98,25 +98,11 @@ La combinación de estas tres fuentes externas complementa el análisis transacc
 
 ## 4. OBTENCIÓN DE DATOS Y CHECKLIST DE CALIDAD EN GOOGLE SHEETS
 
-### 4.1. Importación y Referencia a la Planilla de Google Sheets
-Para iniciar el proyecto, se importó el conjunto de datos de ventas junto con los catálogos auxiliares (clientes, productos, categorías y medios de pago) a Google Sheets. Siguiendo las buenas prácticas, los archivos originales se preservaron intactos en hojas de respaldo independientes (`01_Raw_...`).
+Para iniciar el proyecto, se importó el conjunto de datos de ventas junto con los catálogos auxiliares (clientes, productos, categorías y medios de pago) a Google Sheets. Siguiendo las buenas prácticas analíticas, los archivos originales se preservaron intactos en hojas de respaldo independientes (`01_Raw_...`).
 
-Para evaluar la calidad de los datos, se diseñó e implementó un formulario con checklist estructurado, el cual se encuentra completamente documentado y disponible para consulta directa en:
-* **Planilla de Google Sheets:** [Barrios Rubén - Comisión C26228 - TPI BI Consulting](https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714)
+Tal como lo establece la consigna del proyecto, el formulario con el checklist de criterios de calidad de datos y el informe con los hallazgos de la auditoría se encuentran diseñados, aplicados y registrados directamente dentro de la planilla compartida de Google Sheets:
+
+* **Planilla Central en Google Sheets:** [Barrios Rubén - Comisión C26228 - TPI BI Consulting](https://docs.google.com/spreadsheets/d/1aJiWEctzwMJkoDOK-tq6lUpjJVtE84jb_jdPk0QKgiQ/edit?gid=1833343714#gid=1833343714)
 * **Pestaña Específica del Formulario:** `formulario calidad de datos`
 
-### 4.2. Informe Breve de Hallazgos de Calidad de Datos
-Tras aplicar el checklist sobre las 3.000 ventas y sus entidades vinculadas, se registraron los siguientes resultados y dictámenes:
-
-| Dimensión / Criterio | Campo Auditado | Resultado del Checklist | Estado |
-| :--- | :--- | :--- | :---: |
-| **Completitud** | `ID_Venta`, Fechas, Clientes y Productos | 0 valores nulos o celdas vacías (100% de cobertura en campos obligatorios). | **Conforme** |
-| **Unicidad** | `ID_Venta` (Ventas) | Se detectaron 29 registros duplicados; fueron eliminados quedando 3.000 ventas únicas correlativas. | **Conforme** |
-| **Consistencia (Clientes)** | `ID_Cliente` (Ventas vs. Clientes) | 100% de coincidencias: los 326 clientes vinculados existen en la tabla maestra (0 huérfanos). | **Conforme** |
-| **Consistencia (Productos)** | `ID_Producto` (Ventas vs. Productos) | 100% de coincidencias: los 38 productos vendidos existen en el catálogo (0 huérfanos). | **Conforme** |
-| **Validez de Datos** | `Estado`, `Cantidad` y Fechas | Estados válidos (Completas, Pendientes, Canceladas); cantidades positivas de 1 a 6; año 2024. | **Conforme** |
-| **Precisión y Formato** | Precios y Textos | Precios con coma convertidos a número contable y textos estandarizados con fórmulas nativas. | **Conforme** |
-
-> **Dictamen Final de Calidad: Aprobado (100% Conforme)**  
-> **Métricas Globales:** 3.000 registros únicos · 0 celdas vacías · Integridad referencial 100% OK.  
-> *Nota: Toda la preparación de datos, fórmulas de búsqueda (`BUSCARV`) y transformaciones analíticas avanzadas se encuentran estructuradas y documentadas directamente en el libro de Google Sheets.*
+> **Ubicación de la Auditoría:** El checklist aplicado en la hoja `formulario calidad de datos` audita las dimensiones de Completitud, Unicidad, Consistencia, Validez y Precisión sobre las 3.000 ventas únicas y sus catálogos vinculados, arrojando un cumplimiento global del 100% Conforme y dictamen Aprobado. Toda la preparación de datos, fórmulas relacionales (`BUSCARV`) y análisis estadístico se encuentran documentados e implementados directamente en el libro de Google Sheets.
