@@ -62,6 +62,10 @@ Sobre un padrón transaccional original de **3.029 filas**, se aplicó el checkl
 
 ## 📊 ETAPA 3: Tablero Ejecutivo en Google Data Studio (Looker Studio)
 
+<p align="center">
+  <img src="./dashboard_looker_studio.png" alt="Dashboard Ejecutivo BI en Google Data Studio" width="100%">
+</p>
+
 Conectado de forma directa a la hoja `03_Consolidado_Ventas` (`A1:Q3001`), el reporte en Data Studio implementa una **arquitectura ergonómica (Dark Mode `#0B0F19`)** con dos horizontes analíticos:
 
 ### 1. Cockpit Superior: Velocidad de Cierre (Diciembre 2024 vs Noviembre 2024)
@@ -136,6 +140,7 @@ La facturación de diciembre creció un **+23.6%**, pero los pedidos solo aument
 ├── metodos_pago.csv                       # Catálogo de medios de pago
 ├── productos.csv                          # Catálogo de artículos, precios y stock
 ├── ventas.csv                             # Transacciones originales (3.029 filas)
+├── dashboard_looker_studio.png            # Captura renderizada en alta resolución del Dashboard
 ├── generar_presentacion_slides.gs         # Script ejecutable de Google Apps Script (Slides)
 ├── PRESENTACION_STORYTELLING_GOOGLE_SLIDES.md # Narrativa completa Diapositiva por Diapositiva
 ├── POST_LINKEDIN_DASHBOARD_BI_DEVELOPER.md   # Post calibrado para redes profesionales
