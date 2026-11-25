@@ -158,4 +158,4 @@ La facturación de diciembre creció un **+23.6%**, pero los pedidos solo aument
 * **Rubén Barrios** — *BI Developer & Analytics Consultant*  
 * **Consultora:** Datawise Consulting  
 * **Comisión:** C26228 · Talento Tech (Plan de Estudios 2026)  
-* **Repositorio:** [github.com/rubenbarrios-bigdata/bi-consulting-ecommerce-analytics](https://github.com/rubenbarrios-bigdata/bi-consulting-ecommerce-analytics)
+
